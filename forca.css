@@ -2,3 +2,13 @@
 padding: 0px;
 margin: 0px;
 }
+body{
+    background-image: ;
+    background-color: #6E6E6E;
+}
+#interface{
+    width: 1080px;
+    height: 640px;
+    margin:0px auto;
+    border: 1px solid blanchedalmond;
+}

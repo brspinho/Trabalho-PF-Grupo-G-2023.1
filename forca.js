@@ -1,9 +1,30 @@
-const animais = ['vaca', 'papagaio', 'gato', 'cachorro']
-const comidas = ['pizza', 'hamburguer', 'cuscuz', 'shushi']
-const capitaisBrasileiras = ['aracaju', 'sao paulo', 'rio de janeiro', 'salvador']
+const numeroJogadores = window.prompt('Quantas pessoas vão jogar? (Máximo de jogadores:4)')
+/*switch (numeroJogadores) {
+    case 1:
+        
+        break;
 
-const temas = [animais, comidas, capitaisBrasileiras]
+    default:
+        break;
+}*/
 
+const animais = ['Animais','vaca', 'papagaio', 'gato', 'cachorro']
+const comidas = ['Comidas','pizza', 'hamburguer', 'cuscuz', 'shushi']
+const capitaisBrasileiras = ['Capitais Brasileiras','aracaju', 'sao paulo', 'rio de janeiro', 'salvador']
+const linguagensDeProgramacao= ['Linguagens de programação','Javascript','Java','PHP','Kotlin','C','C#','C++']
+const temas = [animais,comidas,capitaisBrasileiras, linguagensDeProgramacao]
+
+function mostrarTema(lista) {
+    const listaNova = lista.toString()
+    const indiceAleatorio = Math.floor(Math.random() * lista.length);
+
+    const temaAleatorio= lista[indiceAleatorio][0]
+
+    const pegarDivTema= document.getElementById('tema')
+
+    return pegarDivTema.textContent= temaAleatorio;    
+}
+mostrarTema(temas)
 //Função para escolher tema
 
 //Função que seleciona uma palavra aleatória no tema escolhido
@@ -14,6 +35,7 @@ const escolher = (lista) =>{
     return lista[numero]
 
 }
+console.log(escolher(animais))
 
 //Função para procurar a letra da palavra
 /*Por enquanto a função retorna apenas o numero de vezes que uma letra aparece dentro de uma lista, 
@@ -35,6 +57,9 @@ const procurar = (palavraOriginal, letra, palavra) =>{
 
 }
 console.log(procurar('e', 'teste'))
+
+
+
 
 
 

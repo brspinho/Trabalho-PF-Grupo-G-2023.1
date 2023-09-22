@@ -22,6 +22,19 @@
                 <p class="jogador">
                     Jogador 4
                 </p>    
+                <h1>Escolher o tema</h1>   
+    <label for= "temaEscolhido">Selecione um tema:</label>
+    <select id= "temaEscolhido">
+        <option value = "Animais">Animais</option>
+        <option value = "Comidas">Comidas</option>
+        <option value = "Esportes">Esportes</option>
+        <option value = "Profissões">Profissões</option>
+        <option value = "Cores">Cores</option>
+        <option value =  "linguagensDeProgramacao">Linguagens de Programação</option>
+        <option value = "capitaisBrasileiras">Capitais Brasileiras</option>
+    </select>
+    <button onclick="escolherTema()">Escolher Tema</button>
+    <div id="tema">Tema Escolhido: Nenhum</div>
 
             </div>
         </header>
@@ -42,6 +55,7 @@
 
 
     </div>
+    
 
     <script src="forca.js"></script>
 </body>

@@ -8,11 +8,18 @@ const numeroJogadores = window.prompt('Quantas pessoas vão jogar? (Máximo de j
         break;
 }*/
 
-const animais = ['Animais','vaca', 'papagaio', 'gato', 'cachorro']
-const comidas = ['Comidas','pizza', 'hamburguer', 'cuscuz', 'shushi']
-const capitaisBrasileiras = ['Capitais Brasileiras','aracaju', 'sao paulo', 'rio de janeiro', 'salvador']
-const linguagensDeProgramacao= ['Linguagens de programação','Javascript','Java','PHP','Kotlin','C','C#','C++']
-const temas = [animais,comidas,capitaisBrasileiras, linguagensDeProgramacao]
+const animais = ['Animais','cachorro', 'gato', 'elefante', 'leão', 'tigre', 'girafa', 'zebra', 'gorila', 'panda', 'cavalo', 
+'coelho', 'papagaio', 'pinguim', 'jacaré', 'tubarão', 'pomba', 'urso polar', 'hipopótamo', 'camelo', 'vaca', 'baleia', 'cobra', 'macaco', 'avestruz', 'foca', 'raposa', 'guepardo', 'rinoceronte', 'lobo']
+const comidas = ['Comidas','pizza', 'hambúrguer', 'sushi', 'massa', 'cuscuz', 'sorvete', 'lasanha', 'taco', 'sanduíche', 'batata frita', 'espaguete', 'salmão', 'frango grelhado', 'peixe e fritas', 'sopa de tomate', 'churrasco', 'torta de maçã', 'pudim', 'queijo', 'arroz frito', 'macarrão instantâneo', 'panqueca', 'salmão defumado', 'risoto', 'feijoada', 'croissant', 'guacamole']
+const capitaisBrasileiras = ['Capitais Brasileiras','aracaju', 'sao paulo', 'rio de janeiro', 'salvador', 'rio branco', 'belem', 'belo horizonte', 'boa vista', 'brasília', 'campo grande', 'cuiabá', 'curitiba', 'florianópolis', 'fortaleza', 'goiânia', 'joão pessoa', 'macapá', 'maceió', 'manaus', 'natal', 'palmas', 'porto alegre', 'porto velho', 'recife', 'são luís', 'teresina', 'vitoria' ]
+const linguagensDeProgramacao= ['Linguagens de programação','python', 'javascript', 'java', 'c', 'c++', 'c#', 'ruby', 'php', 'swift', 'go', 'rust', 'typescript', 'kotlin', 'perl', 'haskell', 'cobol', 'prolog', 'sql', 'assembly']
+const jsFuncional = ['Javascipt (Programação Funcional)','funções de primeira classe', 'funções de alta ordem', 'currying','map','filter','reduce','imutabilidade','recursividade','recursão de cauda', 'pureza','função arrow','função anônima','listas']
+const cores = ['Cores','vermelho', 'azul', 'amarelo', 'verde', 'laranja', 'roxo', 'rosa', 'marrom', 'preto', 'branco']
+const esportes = ['Esportes','futebol', 'basquete', 'tênis', 'natação', 'vôlei', 'atletismo', 'golfe', 'rugby', 'tênis de mesa', 'ciclismo', 'vôlei sentado', 'badminton']
+const profissões = ['Profissões','médico', 'engenheiro', 'professor', 'advogado', 'contador', 'enfermeiro', 'arquiteto', 'psicólogo', 'programador', 'jornalista']
+const instrumentosMusicais = ['Instrumentos Musicais','violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'saxofone']
+
+const temas = [animais,comidas,capitaisBrasileiras, linguagensDeProgramacao, jsFuncional, cores, esportes, instrumentosMusicais, profissões]
 
 function mostrarTema(lista) {
     const listaNova = lista.toString()

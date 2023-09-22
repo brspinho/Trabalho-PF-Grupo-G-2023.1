@@ -34,11 +34,20 @@ function mostrarTema(lista) {
 mostrarTema(temas)
 //Função para escolher tema
 
+const escolherTema = () => {
+    const escolherTema = document.getElementById('escolherTema')
+    const temaEscolhido = escolherTema.value
+    if (temaEscolhido !== '' ) {
+        document.getElementById('tema').textContent = `Tema Selecionado:' ${temaEscolhido}`
+    }else document.getElementById('tema').textContent = `Tema Não Selecionado`
+
+}
+
 //Função que seleciona uma palavra aleatória no tema escolhido
 
 const escolher = (lista) =>{
 
-    const numero = Math.floor(Math.random() * 5)
+    const numero = Math.floor(Math.random() * lista.length)
     return lista[numero]
 
 }

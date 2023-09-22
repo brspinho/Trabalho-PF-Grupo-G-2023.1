@@ -81,6 +81,8 @@ console.log(procurar('e', 'teste'))
 const escolharandom = escolher(animais) //aqui devemos colocar entre parênteses o tema escolhido
 const strip = escolharandom.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(strip)
+//Função para separar a string por caracter
+const separa = strip.split("")
 
 
 

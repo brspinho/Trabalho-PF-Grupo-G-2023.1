@@ -55,26 +55,23 @@ const escolher = (lista) =>{
 }
 console.log(escolher(animais))
 
-//Função para procurar a letra da palavra
-/*Por enquanto a função retorna apenas o numero de vezes que uma letra aparece dentro de uma lista, 
-fazer depois ele identificando o index da letra na palavra original, deixar pra guilherme fazer depois.*/
+//Função para procurar a  posição da letra na palavra
+/*Usa-se o split para dividir a string em uma lista e o reduce procura a letra escolhida, concatenando em uma lista o index da letra .*/ 
 
-const procurar = (palavraOriginal, letra, palavra) =>{
+const posicaoLetra = (palavra, letra) => {
+    return palavra.split('').reduce((acc, elemento, index) => {
 
-    const [x, ...xs] = palavra
+        if (elemento === letra) {
+            return acc.concat(index);
+        }
 
-    if(x == undefined){
-        return 0
-    }
-    else if(x == letra){
-        return 1 + procurar(letra, xs)
-    }
-    else{
-        return 0 + procurar(letra, xs)
-    }
+        return acc
 
+    }, [])
+    
 }
-console.log(procurar('e', 'teste'))
+
+//console.log(posicaoLetra('teste','e'))
 
 
 //Função para fazer o tratamento da palavra escolhida, ignorando acentuação (coloquei somente para acentuações da língua portuguesa)

@@ -44,7 +44,7 @@
 /*INDEX*/
 body#index{
 
-    background-color: #6E6E6E;
+    background-color: #666565;
    
 }
 header{
@@ -170,3 +170,8 @@ ul li{
     margin-top: 30px;
 }
 
+body {
+    background-image: url(img/4b9b6002-d150-4ebf-b059-2d1e28ee2b14\ \(1\).jpg);
+    background-repeat: no-repeat;  
+    background-size: cover;
+}

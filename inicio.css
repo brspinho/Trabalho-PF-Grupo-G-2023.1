@@ -14,9 +14,41 @@
 #Logo{
     text-align: center;
     padding-top: 170px;
-
 }
-.container{
+
+/*Parte dos temas*/
+/*==============================================*/
+.escolherTema{
+    padding-left: 245px;
+    top:424px;
+    position: absolute;
+}
+
+.temaEscolhido{
+    font-family: 'Minecraft', Times, serif;
+    background-color: transparent;
+    border: transparent;
+    font-size: 14px;
+}
+/*==============================================*/
+
+/*Parte dos jogadores*/
+/*==============================================*/
+.jogadores{
+    top: 427px;
+    padding-left: 870px;
+    position: absolute;
+}
+
+.numjog{
+    font-family: 'Minecraft', Times, serif;
+    background-color: transparent;
+    border: transparent;
+    font-size: 14px;
+}
+/*==============================================*/
+
+.Molduras{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly ;
@@ -26,4 +58,16 @@
     font-family: 'Minecraft', Times, serif;
     font-weight: normal;
     text-align: center;
+}
+
+.botao{
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.botao_iniciar{
+    background-color: #464646;
+    border: 1px transparent;
 }

@@ -1,14 +1,77 @@
 *{
 padding: 0px;
 margin: 0px;
+
 }
-body{
-    background-image: ;
+/*INÍCIO*/
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+#inicio{
+    width: 80% ;
+    height: 100%; 
+    margin:  auto;
+    border: 1px solid blanchedalmond;
+}
+#Logo{
+    text-align: center;
+    padding-top: 170px;
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly ;
+    border: 1px solid gold;
+}
+
+.titulo_temas{
+    font-family: 'Minecraft', Times, serif;
+    font-weight: normal;
+    text-align: center;
+}
+.moldura{
+    border: 1px solid red;
+    background-image: url("sprites/Moldura Tipo 3.png") ;
+    width : 300px ;
+    height: 50px;
+}
+
+
+/*INDEX*/
+body#index{
+
     background-color: #6E6E6E;
+   
 }
+header{
+    position: relative;
+    background-color: blueviolet;
+    height: 55px;
+    
+}
+ul{
+    list-style-type: none;
+    float: right;
+    position: absolute;
+    margin: 10px auto;
+    padding: 0px 12px;
+}
+ul li{
+  float:  left;
+  text-transform:uppercase;  
+  padding: 12px; 
+  font-size: 14px;
+  color:#ccffff; 
+  font: "Lucida Console", "arial", sans-serif;
+}
+/*INTERFACE PÁGINA DO JOGO*/
 #interface{
-    width: 920px;
-    height: 640px;
+    width: 80% ;
+    height: 100%;
     margin:  auto;
     border: 1px solid blanchedalmond;
 }
@@ -16,5 +79,6 @@ body{
     background-color: aqua;
     padding: 10px;
     text-align: center;
-    
+    margin-top: 30px;
 }
+

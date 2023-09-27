@@ -1,7 +1,7 @@
 *{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+padding: 0px;
+margin: 0px;
+
 }
 /*INÍCIO*/
 @font-face {
@@ -12,7 +12,7 @@
 }
 #inicio{
     width: 80% ;
-     
+     height: 635px;
     margin:  auto;
     border: 1px solid blanchedalmond;
 }
@@ -41,93 +41,6 @@
 }
 
 
-/*INDEX*/
-body#index{
-
-    background-color: #666565;
-   
-}
-header{
-    position: relative;
-    background-color: blueviolet;
-    height: 55px;
-    
-}
-ul{
-    list-style-type: none;
-    float: right;
-    position: absolute;
-    margin: 10px auto;
-    padding: 0px 12px;
-}
-ul li{
-  float:  left;
-  text-transform:uppercase;  
-  padding: 12px; 
-  font-size: 14px;
-  color:#ccffff; 
-  font: "Lucida Console", "arial", sans-serif;
-}
-#Logo{
-    text-align: center;
-    padding-top: 170px;
-}
-
-/*Parte dos temas*/
-/*==============================================*/
-.escolherTema{
-    padding-left: 245px;
-    top:424px;
-    position: absolute;
-}
-
-.temaEscolhido{
-    font-family: 'Minecraft', Times, serif;
-    background-color: transparent;
-    border: transparent;
-    font-size: 14px;
-}
-/*==============================================*/
-
-/*Parte dos jogadores*/
-/*==============================================*/
-.jogadores{
-    top: 427px;
-    padding-left: 870px;
-    position: absolute;
-}
-
-.numjog{
-    font-family: 'Minecraft', Times, serif;
-    background-color: transparent;
-    border: transparent;
-    font-size: 14px;
-}
-/*==============================================*/
-
-.Molduras{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly ;
-}
-
-.titulo_temas{
-    font-family: 'Minecraft', Times, serif;
-    font-weight: normal;
-    text-align: center;
-}
-
-.botao{
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-content: space-around;
-}
-
-.botao_iniciar{
-    background-color: #464646;
-    border: 1px transparent;
-}
 
 /*INDEX*/
 body#index{
@@ -168,10 +81,4 @@ ul li{
     padding: 10px;
     text-align: center;
     margin-top: 30px;
-}
-
-body {
-    background-image: url(img/4b9b6002-d150-4ebf-b059-2d1e28ee2b14\ \(1\).jpg);
-    background-repeat: no-repeat;  
-    background-size: cover;
 }

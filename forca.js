@@ -22,6 +22,12 @@ const frutas = ['Frutas', 'Banana', 'Pera', 'Uva', 'Tangerina', 'Tamarindo', 'Si
 const paises = ['Países', 'Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Estados Unidos', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
 const temas = [animais,comidas,capitaisBrasileiras, linguagensDeProgramacao, jsFuncional, cores, esportes, instrumentosMusicais, profissões]
 
+const players = [{nome: 'Player 1', win: 0, vida: 5}, {nome: 'Player 2', win: 0, vida: 5}, {nome: 'Player 3', win: 0, vida: 5}, {nome: 'Player 4', win: 0, vida: 5}] //Temos separado cada jogador, ao seu lado o número de vitórias e vidas
+function selecionaPlayer(lista){ //quantidade de players na partida
+    const pegajog = document.getElementById('numjog').value //pegar o número de jogadores escolhidos
+    const players = lista.slice(0, pegajog) //selecionar somente a quantidade de players necessária
+    return players
+}
 
 function mostrarTema(lista) {
     const listaNova = lista.toString()

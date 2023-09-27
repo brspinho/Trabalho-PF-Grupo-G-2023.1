@@ -1,7 +1,7 @@
 *{
-padding: 0px;
-margin: 0px;
-
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 }
 /*INÍCIO*/
 @font-face {
@@ -10,22 +10,48 @@ margin: 0px;
     font-weight: normal;
     font-style: normal;
 }
-#inicio{
-    width: 80% ;
-    height: 100%; 
-    margin:  auto;
-    border: 1px solid blanchedalmond;
-}
+
 #Logo{
     text-align: center;
     padding-top: 170px;
-
 }
-.container{
+
+/*Parte dos temas*/
+/*==============================================*/
+.escolherTema{
+    padding-left: 245px;
+    top:424px;
+    position: absolute;
+}
+
+.temaEscolhido{
+    font-family: 'Minecraft', Times, serif;
+    background-color: tra;
+    border: transparent;
+    font-size: 14px;
+}
+/*==============================================*/
+
+/*Parte dos jogadores*/
+/*==============================================*/
+.jogadores{
+    top: 427px;
+    padding-left: 870px;
+    position: absolute;
+}
+
+.numjog{
+    font-family: 'Minecraft', Times, serif;
+    background-color: transparent;
+    border: transparent;
+    font-size: 14px;
+}
+/*==============================================*/
+
+.Molduras{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly ;
-    border: 1px solid gold;
 }
 
 .titulo_temas{
@@ -33,13 +59,18 @@ margin: 0px;
     font-weight: normal;
     text-align: center;
 }
-.moldura{
-    border: 1px solid red;
-    background-image: url("sprites/Moldura Tipo 3.png") ;
-    width : 300px ;
-    height: 50px;
+
+.botao{
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
 }
 
+.botao_iniciar{
+    background-color: #464646;
+    border: 1px transparent;
+}
 
 /*INDEX*/
 body#index{

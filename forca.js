@@ -12,7 +12,7 @@ const profissões = ['Profissões','médico', 'engenheiro', 'professor', 'advoga
 const instrumentosMusicais = ['Instrumentos Musicais','violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'saxofone']
 const frutas = ['Frutas', 'Banana', 'Pera', 'Uva', 'Tangerina', 'Tamarindo', 'Siriguela', 'Pitanga', 'Pessego', 'Morango', 'Melao', 'Melancia', 'Maracuja', 'Mangaba', 'Manga', 'Mamao', 'Maca', 'Limao', 'Laranja', 'Kiwi', 'Jambo', 'Jenipapo', 'Jaca', 'Jabuticaba', 'Groselha', 'Goiaba', 'Framboesa', 'Figo', 'Coco', 'Cereja', 'Carambola', 'Caja', 'Cacau', 'Amora', 'Acerola', 'Acai', 'Abacaxi', 'Abacate', 'Caju']
 const paises = ['Países', 'Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Estados Unidos', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
-const temas = [animais,comidas,capitaisBrasileiras, linguagensDeProgramacao, jsFuncional, cores, esportes, instrumentosMusicais, profissões]
+const temas = [animais,comidas,capitaisBrasileiras, linguagensDeProgramacao, jsFuncional, cores, esportes, instrumentosMusicais, profissões, frutas, paises]
 
 /*FUNÇÕES DA TELA DE INÍCI0*/
 const mostrarListaDeTemas =()=> {
@@ -26,20 +26,19 @@ function mostrarListaN() {
     input2.list = 'numero-jogadores'
     input2.focus();    
 }
-/*
+
 function armazenarTema() {
     const valorTema= document.getElementById('temaInput').value
     log(valorTema)
     return valorTema
 }
-function armazenarN() {
+
+function armazenarJogadores() {
     const valorN = document.getElementById('numeroInput').value
     log(valorN) 
     return valorN     
 }
-armazenarN()
-armazenarTema()
-*/
+
 function jogar() {
     const valorN = document.getElementById('numeroInput').value
     const valorTema= document.getElementById('temaInput').value
@@ -76,13 +75,25 @@ const escolherTema = () => {
 
 //Função que seleciona uma palavra aleatória no tema escolhido
 
-const escolher = (lista) =>{
+// const escolher = (tema) =>{
+//     const palavraNoTema = temas[tema]
+//     // Escolhe uma palavra aleatoria do tema
+//     const palavraAleatoria = palavraNoTema[Math.floor(Math.random() * tema?.length)]
+//     return palavraAleatoria
+// }
 
-    const numero = Math.floor(Math.random() * lista.length)
-    return lista[numero]
 
-}
-console.log(escolher(animais))
+//     // Spitando a palavra
+//     // const palavraSplitada = palavraAleatoria.split('')
+//     // return palavraSplitada
+
+//     const palavraAleatoriaUsada = escolher('comidas')
+//     // Função para mostrar a palavra na tela(Ainda falta coisa pra ajeitar, deixa que eu depois arrumo)
+//     mostrarPalavra()
+//     function mostrarPalavra (){
+//         const palavratela = document.getElementById("palavra-secreta")
+//         palavratela.innerHTML = palavraAleatoriaUsada
+//     }
 
 //Função para procurar a  posição da letra na palavra
 /*Usa-se o split para dividir a string em uma lista e o reduce procura a letra escolhida, concatenando em uma lista o index da letra .*/ 
@@ -119,3 +130,22 @@ const chute = (letra, palavra, vidas)
 
 
 
+const botaoJogar = document.getElementById("botaoJogar");
+botaoJogar.addEventListener('click', (x)=>{
+redirecionar()
+
+})
+
+const redirecionar = () =>{
+    const tema = armazenarTema()
+    const jogadores = armazenarJogadores()
+    window.location.href = `./game.html?tema=${tema}&jogadores=${jogadores}`
+}
+
+const recuperarDados = () => {
+    const searchParams = new URLSearchParams(window.location.search)
+const tema = searchParams.get('tema')
+const jogadores = searchParams.get('jogadores')
+console.log(tema)
+console.log(jogadores)
+}

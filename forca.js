@@ -72,7 +72,47 @@ const escolherTema = () => {
     }else document.getElementById('tema').textContent = `Tema Não Selecionado`
 
 }
+/*const players = [{nome: 'Player 1', win: 0}, 
+                 {nome: 'Player 2', win: 0},
+                 {nome: 'Player 3', win: 0},
+                 {nome: 'Player 4', win: 0}]   //Temos separado cada jogador, ao seu lado o número de vitórias 
+function selecionaPlayer(lista){ //quantidade de players na partida     
+    const pegajog = document.getElementById('numjog').value //pegar o número de jogadores escolhidos     
+    const players = lista.slice(0, pegajog) //selecionar somente a quantidade de players necessária     
+    return players 
+}
 
+const gameState = {  //faz o controle do estado do jogo
+    rodada:0,
+    jogadorVez:players[0],
+    vidas: 5,
+    adivinhouLetra:false          
+}
+function alternaVez(newGameState){ //função para alternar a vez entre os jogadores
+    const {rodada, adivinhouLetra} = newGameState;  //definimos o que vai ser a att do estado do jogo que faremos a cada round
+    const novaRodada = (rodada+1) % players.length   //vai variar a rodada de 0 a 3, a qual vai ser usada como index para identificar o jogador da vez
+    const novoPlayer = players[novaRodada]
+    if(adivinhouLetra){
+        return {
+            ...newGameState //se acertar a letra o estado do jogo se mantém igual e o jogador repete a vez
+    }
+    }
+    else return {  //se errar a letra a vez é passada para o próximo jogador e terão menos uma vida
+        ...newGameState,
+        rodada: novaRodada,
+        jogadorVez: novoPlayer,
+        vidas: newGameState.vidas--,
+        adivinhouLetra: false
+    }
+}
+function playerAcerta(newGameState){//função para verificar se o player acertou, se a letra estiver na palavra faz uma cópia do estado do jogo onde acertouLetra é true
+    if (posicaoLetra!=[]) 
+  return {
+    ...newGameState,
+    adivinhouLetra: true
+  }
+}
+*/
 //Função que seleciona uma palavra aleatória no tema escolhido
 
 // const escolher = (tema) =>{

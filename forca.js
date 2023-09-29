@@ -92,7 +92,9 @@ function alternaVez(newGameState){ //função para alternar a vez entre os jogad
     const {rodada, adivinhouLetra} = newGameState;  //definimos o que vai ser a att do estado do jogo que faremos a cada round
     const novaRodada = (rodada+1) % players.length   //vai variar a rodada de 0 a 3, a qual vai ser usada como index para identificar o jogador da vez
     const novoPlayer = players[novaRodada]
-    if(adivinhouLetra){
+    if (newGameState.vidas==0) return console.log("Game Over") //implementar a parada do jogo
+    else if (acertaTudo==false) return console.log("Vitória!") //implementar a parada do jogo
+    else if(adivinhouLetra){
         return {
             ...newGameState //se acertar a letra o estado do jogo se mantém igual e o jogador repete a vez
     }
@@ -101,11 +103,11 @@ function alternaVez(newGameState){ //função para alternar a vez entre os jogad
         ...newGameState,
         rodada: novaRodada,
         jogadorVez: novoPlayer,
-        vidas: newGameState.vidas--,
+        vidas: newGameState.vidas--, //falta testar se essa sintaxe tá funcionando pra reduzir as vidas uma a uma
         adivinhouLetra: false
     }
 }
-function playerAcerta(newGameState){//função para verificar se o player acertou, se a letra estiver na palavra faz uma cópia do estado do jogo onde acertouLetra é true
+function playerAcerta(newGameState){//função para verificar se o player acertou, se a letra estiver na palavra faz uma cópia do estado do jogo onde adivinhouLetra é true
     if (posicaoLetra!=[]) 
   return {
     ...newGameState,
@@ -150,6 +152,13 @@ const posicaoLetra = (palavra, letra) => {
 
     }, [])
     
+}
+
+const indef = x => typeof x == 'undefined'  //Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
+const acertaTudo = (tracejada, e='_') => {
+    const [x, ...xs] = tracejada
+    if (indef(x)) {return false}
+    else return (e===x) || acertaTudo([...xs], e)
 }
 
 //console.log(posicaoLetra('teste','e'))

@@ -10,11 +10,12 @@ margin: 0px;
     font-weight: normal;
     font-style: normal;
 }
-#inicio{
+body{
     width: 80% ;
-     height: 635px;
+     height: 100%;
     margin:  auto;
     border: 1px solid blanchedalmond;
+    background-color: #464646
 }
 #Logo{
     text-align: center;
@@ -42,12 +43,8 @@ margin: 0px;
 
 
 
-/*INDEX*/
-body#index{
+/*GAME*/
 
-    background-color: #6E6E6E;
-   
-}
 header{
     position: relative;
     background-color: blueviolet;
@@ -69,9 +66,12 @@ ul li{
   color:#ccffff; 
   font: "Lucida Console", "arial", sans-serif;
 }
+.p1:active{
+ background-color: yellowgreen;
+}
 /*INTERFACE PÁGINA DO JOGO*/
 #interface{
-    width: 80% ;
+    width: 90% ;
     height: 100%;
     margin:  auto;
     border: 1px solid blanchedalmond;
@@ -82,3 +82,4 @@ ul li{
     text-align: center;
     margin-top: 30px;
 }
+

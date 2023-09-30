@@ -38,40 +38,6 @@ function armazenarJogadores() {
     log(valorN) 
     return valorN     
 }
-
-function jogar() {
-    const valorN = document.getElementById('numeroInput').value
-    const valorTema= document.getElementById('temaInput').value
-    log(valorTema)
-    log(valorN)
-    return valorTema
-    return valorN
-}
-
-
-
-/*
-function mostrarTema(lista) {
-    const listaNova = lista.toString()
-    const indiceAleatorio = Math.floor(Math.random() * lista.length);
-
-    const temaAleatorio= lista[indiceAleatorio][0]
-
-    const pegarDivTema= document.getElementById('tema')
-
-    return pegarDivTema.textContent= temaAleatorio;    
-}*/
-//mostrarTema(temas)
-//Função para escolher tema
-
-const escolherTema = () => {
-    const escolherTema = document.getElementById('escolherTema')
-    const temaEscolhido = escolherTema.value
-    if (temaEscolhido !== '' ) {
-        document.getElementById('tema').textContent = `Tema Selecionado:' ${temaEscolhido}`
-    }else document.getElementById('tema').textContent = `Tema Não Selecionado`
-
-}
 /*const players = [{nome: 'Player 1', win: 0}, 
                  {nome: 'Player 2', win: 0},
                  {nome: 'Player 3', win: 0},
@@ -85,7 +51,7 @@ function selecionaPlayer(lista){ //quantidade de players na partida
 const gameState = {  //faz o controle do estado do jogo
     rodada:0,
     jogadorVez:players[0],
-    vidas: 5,
+    vidas: 6,
     adivinhouLetra:false          
 }
 function alternaVez(newGameState){ //função para alternar a vez entre os jogadores
@@ -179,22 +145,55 @@ const chute = (letra, palavra, vidas)
 
 
 
-const botaoJogar = document.getElementById("botaoJogar");
-botaoJogar.addEventListener('click', (x)=>{
+/*const botaoJogar = document.getElementById("botaoJogar");
+botaoJogar.addEventListener('click', (x)=>{ESSA LINHA DE CÓDIGO ESTAVA DANDO ERRO(Derick)
 redirecionar()
 
-})
-
+})*/
 const redirecionar = () =>{
     const tema = armazenarTema()
     const jogadores = armazenarJogadores()
     window.location.href = `./game.html?tema=${tema}&jogadores=${jogadores}`
 }
 
+function recuperarTema() {
+    const searchParams = new URLSearchParams(window.location.search) 
+    const tema = searchParams.get('tema')
+    const pegarDivTema= document.getElementById('tema')
+    return pegarDivTema.innerHTML = tema;
+     
+}
+recuperarTema()
+function recuperarNJogadores(){
+    const searchParams = new URLSearchParams(window.location.search) 
+    const nJogadores = searchParams.get('jogadores')             
+    return nJogadores
+}
+log(recuperarNJogadores())
+
+function mostrarNJogadores() {
+      const jg= recuperarNJogadores()
+     const listJogadores= document.getElementById('listaJogadores')
+     if (jg==1) {
+       return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li></ul>')
+     } else if(jg==2) {
+       return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li></ul>')
+
+     } else if(jg==3){
+       return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li><li class="p3">P3</li></ul>')
+
+     }else{
+       return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li><li class="p3">P3</li><li class="p4">P4</li></ul>')
+     }
+}
+mostrarNJogadores()
+/*
 const recuperarDados = () => {
-    const searchParams = new URLSearchParams(window.location.search)
+const searchParams = new URLSearchParams(window.location.search)    
 const tema = searchParams.get('tema')
 const jogadores = searchParams.get('jogadores')
 console.log(tema)
 console.log(jogadores)
-}
+return tema 
+return jogadores 
+}*/

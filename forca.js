@@ -12,32 +12,12 @@ const temas = {
     instrumentosMusicais: ['Instrumentos Musicais','violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'saxofone'],
     frutas: ['Frutas', 'Banana', 'Pera', 'Uva', 'Tangerina', 'Tamarindo', 'Siriguela', 'Pitanga', 'Pessego', 'Morango', 'Melao', 'Melancia', 'Maracuja', 'Mangaba', 'Manga', 'Mamao', 'Maca', 'Limao', 'Laranja', 'Kiwi', 'Jambo', 'Jenipapo', 'Jaca', 'Jabuticaba', 'Groselha', 'Goiaba', 'Framboesa', 'Figo', 'Coco', 'Cereja', 'Carambola', 'Caja', 'Cacau', 'Amora', 'Acerola', 'Acai', 'Abacaxi', 'Abacate', 'Caju'],
     paises: ['Países', 'Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Estados Unidos', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
-  };
+};
 
-/*FUNÇÕES DA TELA DE INÍCI0*/
-const mostrarListaDeTemas =()=> {
-    const input= document.getElementById('temaInput')
-    input.list= 'lista-temas'
-    input.focus();
-    
-}
-function mostrarListaN() {
-    const input2= document.getElementById('numeroInput')
-    input2.list = 'numero-jogadores'
-    input2.focus();    
+const imprimirLinhas = () =>{
+    // ToDo: imprime as linhas na tela, mas olhar a ques~toa do espaço depois
 }
 
-function armazenarTema() {
-    const valorTema= document.getElementById('temaInput').value
-    log(valorTema)
-    return valorTema
-}
-
-function armazenarJogadores() {
-    const valorN = document.getElementById('numeroInput').value
-    log(valorN) 
-    return valorN     
-}
 /*const players = [{nome: 'Player 1', win: 0}, 
                  {nome: 'Player 2', win: 0},
                  {nome: 'Player 3', win: 0},
@@ -117,46 +97,26 @@ const acertaTudo = (tracejada, e='_') => {
     else return (e===x) || acertaTudo([...xs], e)
 }
 
-//console.log(posicaoLetra('teste','e'))
-
-/*
-//Função para fazer o tratamento da palavra escolhida, ignorando acentuação (coloquei somente para acentuações da língua portuguesa)
-const escolharandom = escolher(animais) //aqui devemos colocar entre parênteses o tema escolhido
-const strip = escolharandom.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-console.log(strip)
-//Função para separar a string por caracter
-const separa = strip.split("")
-
-
-
-/*const botaoJogar = document.getElementById("botaoJogar");
-botaoJogar.addEventListener('click', (x)=>{ESSA LINHA DE CÓDIGO ESTAVA DANDO ERRO(Derick)
-redirecionar()
-
-})*/
-const redirecionar = () =>{
-    const tema = armazenarTema()
-    const jogadores = armazenarJogadores()
-    window.location.href = `./game.html?tema=${tema}&jogadores=${jogadores}`
-}
-
-function recuperarTema() {
+//Recupera o Tema e o jogador  do URL do site
+function pegarTemaURL() {
     const searchParams = new URLSearchParams(window.location.search) 
     const tema = searchParams.get('tema')
-    const pegarDivTema= document.getElementById('tema')
-    return pegarDivTema.innerHTML = tema;
-     
+    return tema
 }
-recuperarTema()
-function recuperarNJogadores(){
-    const searchParams = new URLSearchParams(window.location.search) 
-    const nJogadores = searchParams.get('jogadores')             
-    return nJogadores
+function pegarNumeroJogadoresURL(){
+  const searchParams = new URLSearchParams(window.location.search) 
+  const nJogadores = searchParams.get('jogadores')             
+  return nJogadores
 }
-log(recuperarNJogadores())
+
+//Função para mostrar o 
+const definirTema = () =>{
+  const pegarDivTema= document.getElementById('tema')
+  pegarDivTema.innerHTML = pegarTemaURL()
+}
 
 function mostrarNJogadores() {
-      const jg= recuperarNJogadores()
+      const jg= pegarNumeroJogadoresURL()
      const listJogadores= document.getElementById('listaJogadores')
      if (jg==1) {
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li></ul>')
@@ -171,6 +131,8 @@ function mostrarNJogadores() {
      }
 }
 mostrarNJogadores()
+definirTema()
+
 /*
 const recuperarDados = () => {
 const searchParams = new URLSearchParams(window.location.search)    
@@ -180,4 +142,4 @@ console.log(tema)
 console.log(jogadores)
 return tema 
 return jogadores 
-}*/
+*/

@@ -73,11 +73,16 @@ const posicaoLetra = (palavra, letra) => {
     
 }
 
-const indef = x => typeof x == 'undefined'  //Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
-const acertaTudo = (tracejada, e='_') => {
-    const [x, ...xs] = tracejada
-    if (indef(x)) {return false}
-    else return (e===x) || acertaTudo([...xs], e)
+const indef = x => typeof x == 'undefined' 
+//Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
+const acertaTudo = (tracejada, e = '_') => { 
+    const [x, ...xs] = tracejada;
+    if (indef(x)) {
+        return false;
+    } 
+    else if (x === ' ') return acertaTudo(xs, e)
+    // Se x for um espaço em branco, continuar verificando as outras letras
+    else return (e === x) || acertaTudo(xs, e)
 }
 
 //Recupera o Tema e o jogador  do URL do site
@@ -112,12 +117,12 @@ const selecionarPalavraAleatoria = (tema = pegarTemaURL())=> {
 
   const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
 
-// Função para substituir a palavra aleatória por tracejados.
+// Função para substituir a palavra aleatória por tracejados, está programada agora para printar a palavra sem as vírgulas
 const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
-  const [x, ...xs] = palavra
-  if (indef(x)) return []
-  else if (x === ' ') return [' ', ...traceja(xs)]
-  else return ['_', ...traceja(xs)]
+  const [x, ...xs] = palavra;
+  if (indef(x)) return "";
+  else if (x === ' ') return ` ${traceja(xs)}`;
+  else return `_ ${traceja(xs)}`;
 }
 console.log(palavraSelecionada)
 console.log(traceja(palavraSelecionada))

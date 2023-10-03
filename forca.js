@@ -4,7 +4,6 @@ const temas = {
     animais: ['cachorro', 'gato', 'elefante', 'leão', 'pássaro', 'peixe', 'tigre', 'girafa', 'macaco', 'cobra'],
     comidas: ['pizza', 'hambúrguer', 'sushi', 'massa', 'salada', 'sopa', 'churrasco', 'taco', 'kebab', 'sorvete'],
     capitaisbrasileiras: ['aracaju', 'salvador', 'rio branco', 'belem', 'belo horizonte', 'boa vista', 'brasília', 'campo grande', 'cuiabá', 'curitiba', 'florianópolis', 'fortaleza', 'goiânia', 'joão pessoa', 'macapá', 'maceió', 'manaus', 'natal', 'palmas', 'porto alegre', 'porto velho', 'recife', 'são luís', 'teresina', 'vitoria'],
-    linguagensdeprogramacao: ['Linguagens de programação','python', 'javascript', 'java', 'c', 'c++', 'c#', 'ruby', 'php', 'swift', 'go', 'rust', 'typescript', 'kotlin', 'perl', 'haskell', 'cobol', 'prolog', 'sql', 'assembly'],
     jsfuncional: ['currying','map','filter','reduce','imutabilidade','recursividade', 'pureza','arrow','listas'],
     cores: ['vermelho', 'azul', 'amarelo', 'verde', 'laranja', 'roxo', 'rosa', 'marrom', 'preto', 'branco'],
     esportes: ['futebol', 'basquete', 'tênis', 'natação', 'vôlei', 'atletismo', 'golfe', 'rugby', 'tênis de mesa', 'ciclismo', 'badminton'],
@@ -18,16 +17,7 @@ const imprimirLinhas = () =>{
     // ToDo: imprime as linhas na tela, mas olhar a ques~toa do espaço depois
 }
 
-/*const players = [{nome: 'Player 1', win: 0}, 
-                 {nome: 'Player 2', win: 0},
-                 {nome: 'Player 3', win: 0},
-                 {nome: 'Player 4', win: 0}]   //Temos separado cada jogador, ao seu lado o número de vitórias 
-function selecionaPlayer(lista){ //quantidade de players na partida     
-    const pegajog = document.getElementById('numjog').value //pegar o número de jogadores escolhidos     
-    const players = lista.slice(0, pegajog) //selecionar somente a quantidade de players necessária     
-    return players 
-}
-
+/*
 const gameState = {  //faz o controle do estado do jogo
     rodada:0,
     jogadorVez:players[0],
@@ -117,15 +107,17 @@ const selecionarPalavraAleatoria = (tema = pegarTemaURL())=> {
     return selecionarPalavraAleatoria(temaFormatado);
   }
 
-const indef = x => typeof x === 'undefined' //Função para pegar a palavra aleatória e deixar ela tracejada
-const traceja = selecionarPalavraAleatoriaPorTema => {
+  const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
+
+
+const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
   const [x, ...xs] = palavra
   if (indef(x)) return []
   else if (x === ' ') return [' ', ...traceja(xs)]
   else return ['_', ...traceja(xs)]
 }
-
-
+console.log(palavraSelecionada)
+console.log(traceja(palavraSelecionada))
 
 function mostrarNJogadores() {
       const jg= parseInt(pegarNumeroJogadoresURL(), 10)
@@ -148,13 +140,4 @@ function mostrarNJogadores() {
 mostrarNJogadores()
 definirTema()
 
-/*
-const recuperarDados = () => {
-const searchParams = new URLSearchParams(window.location.search)    
-const tema = searchParams.get('tema')
-const jogadores = searchParams.get('jogadores')
-console.log(tema)
-console.log(jogadores)
-return tema 
-return jogadores 
-*/
+

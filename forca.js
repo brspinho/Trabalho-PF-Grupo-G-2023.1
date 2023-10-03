@@ -73,11 +73,15 @@ const posicaoLetra = (palavra, letra) => {
     
 }
 
-const indef = x => typeof x == 'undefined'  //Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
-const acertaTudo = (tracejada, e='_') => {
-    const [x, ...xs] = tracejada
-    if (indef(x)) {return false}
-    else return (e===x) || acertaTudo([...xs], e)
+const indef = x => typeof x == 'undefined'  /
+const acertaTudo = (tracejada, e = '_') => {//Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
+    const [x, ...xs] = tracejada;
+    if (indef(x)) {
+        return false;
+    } 
+    else if (x === ' ') return acertaTudo(xs, e)
+    // Se x for um espaço em branco, continuar verificando as outras letras
+    else return (e === x) || acertaTudo(xs, e)
 }
 
 //Recupera o Tema e o jogador  do URL do site

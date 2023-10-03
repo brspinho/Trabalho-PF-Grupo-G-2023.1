@@ -117,6 +117,14 @@ const selecionarPalavraAleatoria = (tema = pegarTemaURL())=> {
     return selecionarPalavraAleatoria(temaFormatado);
   }
 
+const indef = x => typeof x === 'undefined' //Função para pegar a palavra aleatória e deixar ela tracejada
+const traceja = selecionarPalavraAleatoriaPorTema => {
+  const [x, ...xs] = palavra
+  if (indef(x)) return []
+  else if (x === ' ') return [' ', ...traceja(xs)]
+  else return ['_', ...traceja(xs)]
+}
+
 
 
 function mostrarNJogadores() {

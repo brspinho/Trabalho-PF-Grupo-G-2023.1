@@ -1,17 +1,17 @@
 const log =(str)=> console.log(str)
 
 const temas = {
-    animais: ['Animais', 'cachorro', 'gato', 'elefante', 'leão', 'pássaro', 'peixe', 'tigre', 'girafa', 'macaco', 'cobra'],
-    comidas: ['Comidas', 'pizza', 'hambúrguer', 'sushi', 'massa', 'salada', 'sopa', 'churrasco', 'taco', 'kebab', 'sorvete'],
-    capitaisBrasileiras: ['Capitais Brasileiras','aracaju', 'salvador', 'rio branco', 'belem', 'belo horizonte', 'boa vista', 'brasília', 'campo grande', 'cuiabá', 'curitiba', 'florianópolis', 'fortaleza', 'goiânia', 'joão pessoa', 'macapá', 'maceió', 'manaus', 'natal', 'palmas', 'porto alegre', 'porto velho', 'recife', 'são luís', 'teresina', 'vitoria'],
-    linguagensDeProgramacao: ['Linguagens de programação','python', 'javascript', 'java', 'c', 'c++', 'c#', 'ruby', 'php', 'swift', 'go', 'rust', 'typescript', 'kotlin', 'perl', 'haskell', 'cobol', 'prolog', 'sql', 'assembly'],
-    jsFuncional: ['Javascipt (Programação Funcional)', 'currying','map','filter','reduce','imutabilidade','recursividade', 'pureza','arrow','listas'],
-    cores: ['Cores','vermelho', 'azul', 'amarelo', 'verde', 'laranja', 'roxo', 'rosa', 'marrom', 'preto', 'branco'],
-    esportes: ['Esportes','futebol', 'basquete', 'tênis', 'natação', 'vôlei', 'atletismo', 'golfe', 'rugby', 'tênis de mesa', 'ciclismo', 'badminton'],
-    profissões: ['Profissões','médico', 'engenheiro', 'professor', 'advogado', 'contador', 'enfermeiro', 'arquiteto', 'psicólogo', 'programador', 'jornalista'],
-    instrumentosMusicais: ['Instrumentos Musicais','violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'saxofone'],
-    frutas: ['Frutas', 'Banana', 'Pera', 'Uva', 'Tangerina', 'Tamarindo', 'Siriguela', 'Pitanga', 'Pessego', 'Morango', 'Melao', 'Melancia', 'Maracuja', 'Mangaba', 'Manga', 'Mamao', 'Maca', 'Limao', 'Laranja', 'Kiwi', 'Jambo', 'Jenipapo', 'Jaca', 'Jabuticaba', 'Groselha', 'Goiaba', 'Framboesa', 'Figo', 'Coco', 'Cereja', 'Carambola', 'Caja', 'Cacau', 'Amora', 'Acerola', 'Acai', 'Abacaxi', 'Abacate', 'Caju'],
-    paises: ['Países', 'Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Estados Unidos', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
+    animais: ['cachorro', 'gato', 'elefante', 'leão', 'pássaro', 'peixe', 'tigre', 'girafa', 'macaco', 'cobra'],
+    comidas: ['pizza', 'hambúrguer', 'sushi', 'massa', 'salada', 'sopa', 'churrasco', 'taco', 'kebab', 'sorvete'],
+    capitaisbrasileiras: ['aracaju', 'salvador', 'rio branco', 'belem', 'belo horizonte', 'boa vista', 'brasília', 'campo grande', 'cuiabá', 'curitiba', 'florianópolis', 'fortaleza', 'goiânia', 'joão pessoa', 'macapá', 'maceió', 'manaus', 'natal', 'palmas', 'porto alegre', 'porto velho', 'recife', 'são luís', 'teresina', 'vitoria'],
+    linguagensdeprogramacao: ['Linguagens de programação','python', 'javascript', 'java', 'c', 'c++', 'c#', 'ruby', 'php', 'swift', 'go', 'rust', 'typescript', 'kotlin', 'perl', 'haskell', 'cobol', 'prolog', 'sql', 'assembly'],
+    jsfuncional: ['currying','map','filter','reduce','imutabilidade','recursividade', 'pureza','arrow','listas'],
+    cores: ['vermelho', 'azul', 'amarelo', 'verde', 'laranja', 'roxo', 'rosa', 'marrom', 'preto', 'branco'],
+    esportes: ['futebol', 'basquete', 'tênis', 'natação', 'vôlei', 'atletismo', 'golfe', 'rugby', 'tênis de mesa', 'ciclismo', 'badminton'],
+    profissões: ['médico', 'engenheiro', 'professor', 'advogado', 'contador', 'enfermeiro', 'arquiteto', 'psicólogo', 'programador', 'jornalista'],
+    instrumentosmusicais: ['violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'saxofone'],
+    frutas: ['Banana', 'Pera', 'Uva', 'Tangerina', 'Tamarindo', 'Siriguela', 'Pitanga', 'Pessego', 'Morango', 'Melao', 'Melancia', 'Maracuja', 'Mangaba', 'Manga', 'Mamao', 'Maca', 'Limao', 'Laranja', 'Kiwi', 'Jambo', 'Jenipapo', 'Jaca', 'Jabuticaba', 'Groselha', 'Goiaba', 'Framboesa', 'Figo', 'Coco', 'Cereja', 'Carambola', 'Caja', 'Cacau', 'Amora', 'Acerola', 'Acai', 'Abacaxi', 'Abacate', 'Caju'],
+    paises: ['Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Estados Unidos', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
 };
 
 const imprimirLinhas = () =>{
@@ -62,16 +62,6 @@ function playerAcerta(newGameState){//função para verificar se o player acerto
 }
 */
 
-  // Função para selecionar uma palavra aleatória de um tema
-  const selecionarPalavraAleatoria = (tema)=> {
-    const palavraAleatoria = Math.floor(Math.random() * (tema.length));
-    return tema[palavraAleatoria];
-  }
-  
-  // Função que recebe algum tema e retorna a palavra aleatória
-  const selecionarPalavraAleatoriaPorTema = (tema) => {
-    return selecionarPalavraAleatoria(tema);
-  }
 
 //Função para procurar a  posição da letra na palavra
 /*Usa-se o split para dividir a string em uma lista e o reduce procura a letra escolhida, concatenando em uma lista o index da letra .*/ 
@@ -115,20 +105,37 @@ const definirTema = () =>{
   pegarDivTema.innerHTML = pegarTemaURL()
 }
 
+// Função para selecionar uma palavra aleatória de um tema
+const selecionarPalavraAleatoria = (tema = pegarTemaURL())=> {
+  const palavraAleatoria = Math.floor(Math.random() * (tema.length));
+  return tema[palavraAleatoria];
+ }
+  
+  // Função que recebe algum tema e retorna a palavra aleatória
+  const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
+    const temaFormatado = temaEscolhido[pegarTemaURL().toLowerCase().replace(" ", "")]
+    return selecionarPalavraAleatoria(temaFormatado);
+  }
+
+
+
 function mostrarNJogadores() {
-      const jg= pegarNumeroJogadoresURL()
+      const jg= parseInt(pegarNumeroJogadoresURL(), 10)
+
      const listJogadores= document.getElementById('listaJogadores')
-     if (jg==1) {
+     if (jg===1) {
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li></ul>')
-     } else if(jg==2) {
+     } else if(jg===2) {
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li></ul>')
 
-     } else if(jg==3){
+     } else if(jg===3){
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li><li class="p3">P3</li></ul>')
 
      }else{
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li><li class="p3">P3</li><li class="p4">P4</li></ul>')
      }
+
+     
 }
 mostrarNJogadores()
 definirTema()

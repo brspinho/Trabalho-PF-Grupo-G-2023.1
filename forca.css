@@ -15,7 +15,7 @@ body{
      height: 100%;
     margin:  auto;
     border: 1px solid blanchedalmond;
-    background-color: #464646
+    background-color: #97af29
 }
 #Logo{
     text-align: center;
@@ -57,6 +57,16 @@ ul{
     position: absolute;
     margin: 10px auto;
     padding: 0px 12px;
+}
+
+#palavra-secreta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-top: 30px;
+
 }
 ul li{
   float:  left;

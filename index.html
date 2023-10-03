@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jogo da Forca</title>
     <style>
-      footer {
-        text-align: center;
-      }
+      
       footer button {
         width: 15%;
         height: 20px;
@@ -17,27 +15,34 @@
 
     <link rel="stylesheet" href="forca.css" />
     <script type="text/javascript" src="index.js" defer></script>
+
   </head>
 
   <body>
+    <!--Imprime a logo na tela-->
     <div id="Logo">
       <img src="sprites/logo-redimensionada.png" />
     </div>
+
+
+    <div>
+      <h1 id="texto_escolher_tema">Temas:</h1>
+      <h1 id="texto_numero_jogadores">N° de Jogadores:</h1>
+    </div>
+
+
+
 
     <div id="palavra-secreta"></div>
 
     <div class="container">
       <div class="moldura">
-        <h1 class="titulo_temas">Temas:</h1>
-
-        <label for="temas">Escolha um tema:</label>
+        
         <select id="temas" name="temas">
           <option value="Animais">Animais</option>
           <option value="Comidas">Comidas</option>
           <option value="Capitais Brasileiras">Capitais Brasileiras</option>
-          <option value="Linguagens programacão">
-            Linguagens programacão
-          </option>
+          <option value="Linguagens programacão">Linguagens programacao</option>
           <option value="JsFuncional">JsFuncional</option>
           <option value="Cores">Cores</option>
           <option value="Esportes">Esportes</option>
@@ -47,11 +52,9 @@
           <option value="Frutas">Frutas</option>
         </select>
 
-        <!--<img src="sprites/Moldura Tipo 3.png"  width = "300px" height =  "50px";>-->
       </div>
 
       <div class="moldura">
-        <h1 class="titulo_temas">N° de Jogadores:</h1>
 
         <select id="numero-jogadores">
           <option value="1">1</option>
@@ -60,13 +63,15 @@
           <option value="4">4</option>
         </select>
 
-        <!--<img src="sprites/Moldura Tipo 3.png"  width = "300px" height =  "50px";>-->
       </div>
+
     </div>
-    <footer>
-      <button onclick="redirecionar()" id="botaoJogar" value="JOGAR">
-        JOGAR
-      </button>
-    </footer>
+
+    <div id="posicao_botao">
+    <button onclick="redirecionar()" id="botaoJogar" value="JOGAR">
+      <img src="sprites/botao_start_game.png">
+    </button>
+    </div>
+    
   </body>
 </html>

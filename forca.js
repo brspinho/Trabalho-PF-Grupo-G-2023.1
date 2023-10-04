@@ -109,13 +109,7 @@ const selecionarPalavraAleatoria = (tema = pegarTemaURL())=> {
   return tema[palavraAleatoria];
  }
   
-  // Função que recebe algum tema e retorna a palavra aleatória
-  const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
-    const temaFormatado = temaEscolhido[pegarTemaURL().toLowerCase().replace(" ", "")]
-    return selecionarPalavraAleatoria(temaFormatado);
-  }
 
-  const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
 
 // Função para substituir a palavra aleatória por tracejados, está programada agora para printar a palavra sem as vírgulas
 const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
@@ -124,8 +118,7 @@ const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
   else if (x === ' ') return ` ${traceja(xs)}`;
   else return `_ ${traceja(xs)}`;
 }
-console.log(palavraSelecionada)
-console.log(traceja(palavraSelecionada))
+//console.log(traceja(palavraSelecionada))
 
 // Função para mostrar os jogadores na tela
 function mostrarNJogadores() {
@@ -146,12 +139,86 @@ function mostrarNJogadores() {
 
      
 }
-mostrarNJogadores()
-definirTema()
+function marcarJogador() {
+    const pegarP1 = document.querySelector('.p1')
+    pegarP1.style.backgroundImage = 'url("") ';
+    pegarP1.style.color= 'pink';
+
+}
 
 // Função que utiliza da função traceja para mostrar as linhas da palavra na tela do jogo
 const mostrarPalavraNaTela = (palavra) => {
   const palavraTela = document.getElementById("palavra-secreta");
   palavraTela.textContent = traceja(palavra)
 }
+// Função que recebe algum tema e retorna a palavra aleatória
+const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
+  const temaFormatado = temaEscolhido[pegarTemaURL().toLowerCase().replace(" ", "")]
+  return selecionarPalavraAleatoria(temaFormatado);
+}
+
+const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
+console.log(palavraSelecionada)
+
+let contador= parseInt(6); 
+
+
+const elemento = document.querySelectorAll('.letra');
+
+ elemento.forEach((button)=>{
+    button.addEventListener('click', function(){
+      const letraSelecionada= this.getAttribute('caractere');
+      console.log(letraSelecionada)
+
+       if (palavraSelecionada.includes(letraSelecionada)) {
+
+        const lugarDaPalavraSecreta = document.getElementById("palavra-secreta");
+        const palavraParcial= palavraSelecionada.split('').map((x) => (x === letraSelecionada ? letraSelecionada : '  '));
+        lugarDaPalavraSecreta.textContent= palavraParcial;         
+       } else{
+
+        contador--;
+        if (contador<0) {
+          
+          return  window.alert('Perdeu, TROUXA')
+        } 
+         }
+        const img= document.getElementById('forca-imagens')
+        console.log(contador)
+       img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/vidas-forca/Forca ${parseInt(contador)} vidas.png">`)
+       
+    })
+  })
+
+
+  
+   
+  
+  
+
+  
+  
+    
+  
+  /*function funcaoDoMap(x) {
+    if (x===letraSelecionada) {
+      return letraSelecionada
+    } else if(palavraParcial.includes(x)) {
+      
+    }else{
+
+    }
+  }*/ 
+
+
+
+
+
+
+//Chamada de funções
+mostrarNJogadores()
+definirTema()
+marcarJogador()
 mostrarPalavraNaTela(palavraSelecionada)
+
+

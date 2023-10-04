@@ -1,141 +1,199 @@
 *{
-padding: 0px;
-margin: 0px;
-
-}
-/*========================== INÍCIO ==========================*/
-@font-face {
-    font-family: 'Minecraft';
-    src: url('Minecraft.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body{
-    width: 80% ;
-    height: 100%;
-    margin:  auto;
-    background-color: #464646
-}
-
-#Logo{
-    text-align: center;
-    padding-top: 170px;
-
-}
- 
-/*Textos*/
-#texto_escolher_tema{
-    font-family: 'Minecraft', Times, serif;
-    padding-left: 235px;
-    bottom: 330px;
-    position: absolute;
-}
-#texto_numero_jogadores{
-    font-family: 'Minecraft', Times, serif;
-    padding-left: 598px;
-    bottom: 330px;
-    position: absolute;
-}
-
-
-/*Botões Select*/
-#temas{
-    font-family: 'Minecraft', Times, serif;
-    background-color: transparent;
-    border-color: transparent;
-    font-size: 20px;
-    width: 290px;
-    position: absolute;
-    bottom: 286px;
-    padding-left: 12px;
-}
-#numero-jogadores{
-    font-family: 'Minecraft', Times, serif;
-    background-color: transparent;
-    border-color: transparent;
-    font-size: 20px;
-    width: 175px; 
-    position: absolute;
-    bottom: 286px;
-    padding-left: 140px;
-}
-
-/*Molduras*/
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly ;
-}
-.moldura{
-    background-image: url("sprites/Moldura_versao_4.png") ;
-    width : 300px ;
-    height: 50px;
-}
-
-/*Botão Jogar*/
-#botaoJogar{
-    text-align: center;
-    background-color: transparent;
-    border-color: transparent;
-}
-#posicao_botao{
-    display: flex;
-    justify-content: center;
-    padding-top: 70px;
-}
-
-
-/*========================== GAME ==========================*/
-
-header{
-    position: relative;
-    background-color: blueviolet;
-    height: 55px;
+    padding: 0px;
+    margin: 0px;
     
-}
-ul{
-    list-style-type: none;
-    float: right;
-    position: absolute;
-    margin: 10px auto;
-    padding: 0px 12px;
-}
+    }
+    /*========================== INÍCIO ==========================*/
+    @font-face {
+        font-family: 'Minecraft';
+        src: url('Minecraft.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    body{
+        width: 80% ;
+        height: 100%;
+        margin:  auto;
+        background-color: #464646
+    }
+    #index{
+        margin-top: -64px;
+    }
+    
+    #Logo{
+        text-align: center;
+        padding-top: 170px;
+    
+    }
+     
+    /*Textos*/
+    #texto_escolher_tema{
+        font-family: 'Minecraft', Times, serif;
+        padding-left: 235px;
+        bottom: 330px;
+        position: absolute;
+    }
+    #texto_numero_jogadores{
+        font-family: 'Minecraft', Times, serif;
+        padding-left: 598px;
+        bottom: 330px;
+        position: absolute;
+    }
+    
+    
+    /*Botões Select*/
+    #temas{
+        font-family: 'Minecraft', Times, serif;
+        background-color: transparent;
+        border-color: transparent;
+        font-size: 20px;
+        width: 290px;
+        position: absolute;
+        bottom: 286px;
+        padding-left: 12px;
+    }
+    #numero-jogadores{
+        font-family: 'Minecraft', Times, serif;
+        background-color: transparent;
+        border-color: transparent;
+        font-size: 20px;
+        width: 175px; 
+        position: absolute;
+        bottom: 286px;
+        padding-left: 140px;
+    }
+    
+    /*Molduras*/
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly ;
+    }
+    .moldura{
+        background-image: url("sprites/Moldura_versao_4.png") ;
+        width : 300px ;
+        height: 50px;
+    }
+    
+    /*Botão Jogar*/
+    #botaoJogar{
+        text-align: center;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    #posicao_botao{
+        display: flex;
+        justify-content: center;
+        padding-top: 70px;
+    }
+    
+    
+    /*========================== GAME ==========================*/
+    
+    header{
+        position: relative;
+        background-color: blueviolet;
+        height: 40px;
+        
+    }
+    ul{
+        list-style-type: none;
+        float: right;
+        position: absolute;
+        margin: 10px auto;
+        padding: 0px 12px;
+    }
+    
+    #palavra-secreta{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color:#ccffff;
+        margin-top: 20px;
+    
+    }
+    ul li{
+      float:  left;
+      text-transform:uppercase;  
+      padding: 12px; 
+      font-size: 14px;
+      color:#ccffff; 
+      font: "Lucida Console", "arial", sans-serif;
+    }       
+    #interface{
+        width: 90% ;
+        height: 100%;
+        margin:  auto;
+        border: 1px solid blanchedalmond;
+    }
+    #tema{
+        background-color: aqua;
+        padding: 10px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .linha{
+        width: 80%;
+        margin: 1.5% auto;
+        text-align: center;
+    }
+    #teclado button{
+        width: 50px;
+        height: 49px;
+        border-radius: 50%;
+        
+    }
+    #forca-imagens{
+        border: 1px solid blue;
+        text-align: center;
+        margin-top: -10px;
+        height: 90%; 
+        position: relative;   
+        
+    }
+    .img0{
+        position: absolute;
+        z-index: 7;
+    }
+    .img1{
+        position: absolute;
+ 
+        z-index: 6;
+    }
+    .img2{
+    
+        z-index: 5;
+        position: absolute;
+  
+    }
+    .img3{
+        z-index: 4;      
+        position: absolute;
 
-#palavra-secreta{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color:#ccffff;
-    margin-top: 30px;
+    }
+    .img4{
+        z-index: 3;       
+        position: absolute;
 
-}
-ul li{
-  float:  left;
-  text-transform:uppercase;  
-  padding: 12px; 
-  font-size: 14px;
-  color:#ccffff; 
-  font: "Lucida Console", "arial", sans-serif;
-}
-.p1:active{
- background-color: yellowgreen;
-}
-/*INTERFACE PÁGINA DO JOGO*/
-#interface{
-    width: 90% ;
-    height: 100%;
-    margin:  auto;
-    border: 1px solid blanchedalmond;
-}
-#tema{
-    background-color: aqua;
-    padding: 10px;
-    text-align: center;
-    margin-top: 30px;
-}
+    }
+    .img5{
+        z-index: 2;       
+        position: absolute;
 
+    }
+    .img6{
+       z-index: 1;        
+        position: absolute;
+        
+    }
+
+
+
+    
+    
+    
 
 

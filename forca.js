@@ -193,7 +193,7 @@ const elemento = document.querySelectorAll('.letra');
          }
         const img= document.getElementById('forca-imagens')
         console.log(contador)
-       img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/vidas-forca/Forca ${parseInt(contador)} vidas.png">`)
+       img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/Vidas Forca/Forca ${parseInt(contador)} vidas.png">`)
        
     })
   })

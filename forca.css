@@ -18,7 +18,7 @@
         background-color: #464646
     }
     #index{
-        margin-top: -64px;
+        
         width: 80% ;
         height: 100%;
         margin: 0px auto;
@@ -28,7 +28,7 @@
     #Logo{
         text-align: center;
         padding-top: 170px;
-    
+        margin-top: -64px;
     }
      
     /*Textos*/

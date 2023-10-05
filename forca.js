@@ -99,12 +99,13 @@ function pegarNumeroJogadoresURL(){
 
 //Função para mostrar o tema na tela
 const definirTema = () =>{
-  const pegarDivTema= document.getElementById('tema')
-  pegarDivTema.innerHTML = pegarTemaURL()
+  const pegarDivTema= document.getElementById('tema') //Função que faz referência ao id tema, onde será exibido o tema na página.
+  pegarDivTema.innerHTML = pegarTemaURL() // Através do valor da função pegarTemaURL, utilizamos a propriedade 'innerHTML' para inserir este valor dentro do id 'tema'.
 }
 
-// Função para selecionar uma palavra aleatória de um tema
+// Função para selecionar uma palavra aleatória de um tema diretamente do URL.
 const selecionarPalavraAleatoria = (tema = pegarTemaURL())=> {
+  // Função em que o Math.random multiplicado pelo comprimento do tema escolhido, vai gerar um indíce aleatório.
   const palavraAleatoria = Math.floor(Math.random() * (tema.length));
   return tema[palavraAleatoria];
  }
@@ -122,18 +123,22 @@ const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
 
 // Função para mostrar os jogadores na tela
 function mostrarNJogadores() {
-      const jg= parseInt(pegarNumeroJogadoresURL(), 10)
+      const jg= parseInt(pegarNumeroJogadoresURL(), 10) // Obtém o número de jogadores a partir da URL e converte para um número inteiro na base 10.
 
-     const listJogadores= document.getElementById('listaJogadores')
+     const listJogadores= document.getElementById('listaJogadores') // Esta função utiliza de uma estrutura condicional para verificar o número de jogadores com base no valor de 'jg'.
      if (jg===1) {
+      // Se a escolha for de 1 jogador, insere uma lista com o elemento "P1".
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li></ul>')
      } else if(jg===2) {
+      // Se a escolha for de 2 jogadores, insere uma lista com o elemento "P1" e "P2".
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li></ul>')
 
      } else if(jg===3){
+       // Se a escolha for de 3 jogadores, insere uma lista com o elemento "P1", "P2" e "P3".
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li><li class="p3">P3</li></ul>')
 
      }else{
+       // Se a escolha for de 4 jogadorer, insere uma lista com o elemento "P1", "P2", "P3" e "P4".
        return listJogadores.insertAdjacentHTML('beforeBegin','<ul><li class="p1">P1</li><li class="p2">P2</li><li class="p3">P3</li><li class="p4">P4</li></ul>')
      }
 
@@ -146,17 +151,20 @@ function marcarJogador() {
 
 }
 
-// Função que utiliza da função traceja para mostrar as linhas da palavra na tela do jogo
+// Função que recebe uma palavra como argumento e a exibe na tela.
 const mostrarPalavraNaTela = (palavra) => {
   const palavraTela = document.getElementById("palavra-secreta");
-  palavraTela.textContent = traceja(palavra)
+  palavraTela.textContent = traceja(palavra)   //Aqui chamo a função 'traceja' para formatar a palavra, para que depois seja exibida na tela.
 }
 // Função que recebe algum tema e retorna a palavra aleatória
 const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
-  const temaFormatado = temaEscolhido[pegarTemaURL().toLowerCase().replace(" ", "")]
+  // A partir da função pegarTemaUrl, o tema escolhido será formatado, convertendo as letras para minúsculas e retirando os espaços.
+  const temaFormatado = temaEscolhido[pegarTemaURL().toLowerCase().replace(" ", "")] 
+  // Então chama a função selecionarPalavraAleatoria já com o tema formatado para assim obter uma palavra aleatória do tema escolhido.
   return selecionarPalavraAleatoria(temaFormatado);
 }
 
+// Função para armazenar a palavra aleatória
 const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
 console.log(palavraSelecionada)
 

@@ -11,14 +11,18 @@
         font-style: normal;
     }
     
-    body{
+     #game{
         width: 80% ;
         height: 100%;
-        margin:  auto;
+        margin: 0px auto;
         background-color: #464646
     }
     #index{
         margin-top: -64px;
+        width: 80% ;
+        height: 100%;
+        margin: 0px auto;
+        background-color: #464646
     }
     
     #Logo{

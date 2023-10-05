@@ -172,6 +172,7 @@ let contador= parseInt(6);
 
 
 const elemento = document.querySelectorAll('.letra');
+let palavraParcial = Array.from(palavraSelecionada).map(()=> '_ ')
 
  elemento.forEach((button)=>{
     button.addEventListener('click', function(){
@@ -179,10 +180,10 @@ const elemento = document.querySelectorAll('.letra');
       console.log(letraSelecionada)
 
        if (palavraSelecionada.includes(letraSelecionada)) {
-
+// Atualiza parte da palavra na tela com a escolha correta da letra através do map 
         const lugarDaPalavraSecreta = document.getElementById("palavra-secreta");
-        const palavraParcial= palavraSelecionada.split('').map((x) => (x === letraSelecionada ? letraSelecionada : '  '));
-        lugarDaPalavraSecreta.textContent= palavraParcial;         
+        palavraParcial= palavraSelecionada.split('').map((letra, index) => (letra === letraSelecionada ? letraSelecionada : palavraParcial[index]));
+        lugarDaPalavraSecreta.textContent= palavraParcial.join('');         
        } else{
 
         contador--;
@@ -191,6 +192,7 @@ const elemento = document.querySelectorAll('.letra');
           return  window.alert('Perdeu, TROUXA')
         } 
          }
+        //  Atualiza a imagem da forca
         const img= document.getElementById('forca-imagens')
         console.log(contador)
        img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/Vidas Forca/Forca ${parseInt(contador)} vidas.png">`)

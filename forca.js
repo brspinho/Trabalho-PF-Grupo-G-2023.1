@@ -189,7 +189,7 @@ let palavraParcial = Array.from(palavraSelecionada).map(()=> '_ ')
         contador--;
         if (contador<0) {
           
-          return  window.alert('Perdeu, TROUXA')
+          return  window.alert(`Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}.`)
         } 
          }
         //  Atualiza a imagem da forca

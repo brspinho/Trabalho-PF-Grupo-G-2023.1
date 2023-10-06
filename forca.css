@@ -11,11 +11,11 @@
         font-style: normal;
     }
     
-     #game{
+     #gamehtml{
         width: 80% ;
         height: 100%;
         margin: 0px auto;
-        background-color: #464646
+        background-color: bisque;
     }
     #index{
         
@@ -34,15 +34,14 @@
     /*Textos*/
     #texto_escolher_tema{
         font-family: 'Minecraft', Times, serif;
-        padding-left: 235px;
-        bottom: 330px;
-        position: absolute;
+        /* bottom: 355px; */
+        /* position: absolute; */
     }
     #texto_numero_jogadores{
         font-family: 'Minecraft', Times, serif;
-        padding-left: 598px;
-        bottom: 330px;
-        position: absolute;
+        /* padding-left: 598px; */
+        /* bottom: 330px; */
+        /* position: absolute; */
     }
     
     
@@ -54,25 +53,27 @@
         font-size: 20px;
         width: 290px;
         position: absolute;
-        bottom: 286px;
+        /* bottom: 286px; */
         padding-left: 12px;
+        margin-top: 14px;
     }
     #numero-jogadores{
         font-family: 'Minecraft', Times, serif;
         background-color: transparent;
         border-color: transparent;
         font-size: 20px;
-        width: 175px; 
+        width: 290px; 
         position: absolute;
-        bottom: 286px;
-        padding-left: 140px;
+        /* bottom: 286px; */
+        padding-left: 12px;
+        margin-top: 14px;
     }
     
     /*Molduras*/
     .container{
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly ;
+        justify-content: space-around ;
     }
     .moldura{
         background-image: url("sprites/Moldura_versao_4.png") ;
@@ -134,8 +135,8 @@
         border: 1px solid blanchedalmond;
     }
     #tema{
-        background-color: aqua;
-        padding: 10px;
+        /* background-color: aqua; */
+        padding: 25px;
         text-align: center;
         margin-top: 30px;
     }

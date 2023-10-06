@@ -101,8 +101,8 @@ function pegarNumeroJogadoresURL(){
 
 //Função para mostrar o tema na tela
 const definirTema = () =>{
-  const pegarDivTema= document.getElementById('tema') //Função que faz referência ao id tema, onde será exibido o tema na página.
-  pegarDivTema.innerHTML = pegarTemaURL() // Através do valor da função pegarTemaURL, utilizamos a propriedade 'innerHTML' para inserir este valor dentro do id 'tema'.
+  const pegarDivTema= document.getElementById("temaTitulo") //Função que faz referência ao id tema, onde será exibido o tema na página.
+  pegarDivTema.textContent = pegarTemaURL() // Através do valor da função pegarTemaURL, utilizamos a propriedade 'innerHTML' para inserir este valor dentro do id 'tema'.
 }
 
 // Função para selecionar uma palavra aleatória de um tema diretamente do URL.
@@ -170,14 +170,14 @@ const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
 const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
 console.log(palavraSelecionada)
 
-let contador= parseInt(6); 
-
+let contador = 5; 
 
 const elemento = document.querySelectorAll('.letra');
 let palavraParcial = Array.from(palavraSelecionada).map(()=> '_ ')
 
  elemento.forEach((button)=>{
     button.addEventListener('click', function(){
+      console.log(contador)
       const letraSelecionada= this.getAttribute('caractere');
       console.log(letraSelecionada)
 
@@ -185,22 +185,33 @@ let palavraParcial = Array.from(palavraSelecionada).map(()=> '_ ')
 // Atualiza parte da palavra na tela com a escolha correta da letra através do map 
         const lugarDaPalavraSecreta = document.getElementById("palavra-secreta");
         palavraParcial= palavraSelecionada.split('').map((letra, index) => (letra === letraSelecionada ? letraSelecionada : palavraParcial[index]));
-        lugarDaPalavraSecreta.textContent= palavraParcial.join('');         
-       } else{
+        lugarDaPalavraSecreta.textContent= palavraParcial.join('');  
+        return       
+       } 
 
-        contador--;
-        if (contador<0) {
+        if (contador==0) {
+          const img= document.getElementById('forca-imagens')
+      
+          img.insertAdjacentHTML('afterBegin',`<img id='img0' class="img${0}" src="sprites/Vidas Forca/Forca ${0} vidas.png">`)
           
-          return  window.alert(`Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}.`)
+         
+          
+        setTimeout(() => {
+          window.alert(`Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}.`)
+        }, 500);
+        
+          return 
         } 
+       
+        const img= document.getElementById('forca-imagens')
+      
+       img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/Vidas Forca/Forca ${parseInt(contador)} vidas.png">`)
+       contador = contador - 1;
          }
         //  Atualiza a imagem da forca
-        const img= document.getElementById('forca-imagens')
-        console.log(contador)
-       img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/Vidas Forca/Forca ${parseInt(contador)} vidas.png">`)
-       
-    })
-  })
+        
+    )
+        })
 
 
   

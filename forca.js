@@ -18,46 +18,6 @@ const temas = {
 
 console.log(temas);
 
-const imprimirLinhas = () =>{
-    // ToDo: imprime as linhas na tela, mas olhar a ques~toa do espaço depois
-}
-
-/*
-const gameState = {  //faz o controle do estado do jogo
-    rodada:0,
-    jogadorVez:players[0],
-    vidas: 6,
-    adivinhouLetra:false          
-}
-function alternaVez(newGameState){ //função para alternar a vez entre os jogadores
-    const {rodada, adivinhouLetra} = newGameState;  //definimos o que vai ser a att do estado do jogo que faremos a cada round
-    const novaRodada = (rodada+1) % players.length   //vai variar a rodada de 0 a 3, a qual vai ser usada como index para identificar o jogador da vez
-    const novoPlayer = players[novaRodada]
-    if (newGameState.vidas==0) return console.log("Game Over") //implementar a parada do jogo
-    else if (acertaTudo==false) return console.log("Vitória!") //implementar a parada do jogo
-    else if(adivinhouLetra){
-        return {
-            ...newGameState //se acertar a letra o estado do jogo se mantém igual e o jogador repete a vez
-    }
-    }
-    else return {  //se errar a letra a vez é passada para o próximo jogador e terão menos uma vida
-        ...newGameState,
-        rodada: novaRodada,
-        jogadorVez: novoPlayer,
-        vidas: newGameState.vidas--, //falta testar se essa sintaxe tá funcionando pra reduzir as vidas uma a uma
-        adivinhouLetra: false
-    }
-}
-function playerAcerta(newGameState){//função para verificar se o player acertou, se a letra estiver na palavra faz uma cópia do estado do jogo onde adivinhouLetra é true
-    if (posicaoLetra!=[]) 
-  return {
-    ...newGameState,
-    adivinhouLetra: true
-  }
-}
-*/
-
-
 //Função para procurar a  posição da letra na palavra
 /*Usa-se o split para dividir a string em uma lista e o reduce procura a letra escolhida, concatenando em uma lista o index da letra .*/ 
 
@@ -170,10 +130,19 @@ const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
 const palavraSelecionada = selecionarPalavraAleatoriaPorTema()
 console.log(palavraSelecionada)
 
-let contador = 5; 
-
-const elemento = document.querySelectorAll('.letra');
+const numirudejug = parseInt(pegarNumeroJogadoresURL()) //Pegar a quantidade de jogadores
+let contador = 5 //Quantidade de vidas
+const elemento = document.querySelectorAll('.letra')
+let vez = 1 // Jogador inicial
 let palavraParcial = Array.from(palavraSelecionada).map(()=> '_ ')
+
+// Função pra mostrar na tela o jogador da vez
+function atualizarInfoJogador() {
+  const infoJogador = document.getElementById('vez-jogador')
+  infoJogador.textContent = `Jogador da vez: P${vez}`
+}
+
+atualizarInfoJogador()
 
  elemento.forEach((button)=>{
     button.addEventListener('click', function(){
@@ -199,14 +168,15 @@ let palavraParcial = Array.from(palavraSelecionada).map(()=> '_ ')
         setTimeout(() => {
           window.alert(`Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}.`)
         }, 500);
-        
           return 
         } 
+        vez = (vez % numirudejug) + 1; // Passar a vez
        
         const img= document.getElementById('forca-imagens')
       
        img.insertAdjacentHTML('afterBegin',`<img class="img${parseInt(contador)}" src="sprites/Vidas Forca/Forca ${parseInt(contador)} vidas.png">`)
        contador = contador - 1;
+       atualizarInfoJogador(); // Atualize a informação do jogador da vez na tela
          }
         //  Atualiza a imagem da forca
         

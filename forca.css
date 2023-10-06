@@ -120,6 +120,18 @@
         margin-top: 20px;
     
     }
+
+
+    #vez-jogador {
+        font-family: 'Minecraft', Times, serif;
+        background-color: transparent; 
+        color: black; 
+        font-size: 18px; 
+        padding: 10px; 
+        text-align: center; 
+      }
+
+
     ul li{
       float:  left;
       text-transform:uppercase;  
@@ -152,7 +164,7 @@
         
     }
     #forca-imagens{
-        border: 1px solid blue;
+        border: 1px transparent;
         text-align: center;
         margin-top: -10px;
         height: 90%; 

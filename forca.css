@@ -169,13 +169,17 @@
         height: 90%; 
         position: relative;   
     }
-    #butn{
-        margin-left: 250px;
+    #butn {
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 300px;
         height: 100px;
         background-color: transparent;
         border-color: transparent;
-    }
+      }
+      
     .img0{
         position: absolute;
         z-index: 7;

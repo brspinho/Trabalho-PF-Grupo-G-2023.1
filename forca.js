@@ -145,6 +145,11 @@ function atualizarInfoJogador() {
 
 atualizarInfoJogador();
 
+const redirecionar = () =>{
+  window.location.href = `./index.html`
+}
+
+
 elemento.forEach((button) => {
   button.addEventListener(
     "click",
@@ -182,7 +187,7 @@ elemento.forEach((button) => {
 
         reset.insertAdjacentHTML(
           "afterBegin",
-          `<button id="butn" style="background-image: url('sprites/botao_restart.png');"></button>`
+          `<button onclick="redirecionar()" id="butn" style="background-image: url('sprites/botao_restart.png');"></button>`
         );
 
         setTimeout(() => {

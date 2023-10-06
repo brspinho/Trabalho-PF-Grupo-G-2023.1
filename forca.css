@@ -34,14 +34,14 @@
     /*Textos*/
     #texto_escolher_tema{
         font-family: 'Minecraft', Times, serif;
-        /* bottom: 355px; */
-        /* position: absolute; */
+        /* bottom: 355px; 
+         position: absolute; */
     }
     #texto_numero_jogadores{
         font-family: 'Minecraft', Times, serif;
-        /* padding-left: 598px; */
-        /* bottom: 330px; */
-        /* position: absolute; */
+        /*padding-left: 598px; 
+        bottom: 330px; 
+        position: absolute; */
     }
     
     
@@ -161,7 +161,6 @@
         width: 50px;
         height: 49px;
         border-radius: 50%;
-        
     }
     #forca-imagens{
         border: 1px transparent;
@@ -169,7 +168,10 @@
         margin-top: -10px;
         height: 90%; 
         position: relative;   
-        
+    }
+    #butn{
+        width: 300px;
+        height: 100px;
     }
     .img0{
         position: absolute;
@@ -206,6 +208,8 @@
         position: absolute;
         
     }
+
+
 
 
 

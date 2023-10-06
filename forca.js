@@ -32,14 +32,19 @@ const posicaoLetra = (palavra, letra) => {
 
 const indef = (x) => typeof x == "undefined";
 //Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
-const acertaTudo = (tracejada, e = "_") => {
+/*const acertaTudo = (tracejada, e = "_") => {
   const [x, ...xs] = tracejada;
   if (indef(x)) {
     return false;
   } else if (x === " ") return acertaTudo(xs, e);
   // Se x for um espaço em branco, continuar verificando as outras letras
   else return e === x || acertaTudo(xs, e);
-};
+};*/
+
+
+
+
+
 
 //Recupera o Tema e o jogador  do URL do site
 function pegarTemaURL() {
@@ -118,6 +123,7 @@ const mostrarPalavraNaTela = (palavra) => {
   const palavraTela = document.getElementById("palavra-secreta");
   palavraTela.textContent = traceja(palavra); //Aqui chamo a função 'traceja' para formatar a palavra, para que depois seja exibida na tela.
 };
+
 // Função que recebe algum tema e retorna a palavra aleatória
 const selecionarPalavraAleatoriaPorTema = (temaEscolhido = temas) => {
   // A partir da função pegarTemaUrl, o tema escolhido será formatado, convertendo as letras para minúsculas e retirando os espaços.
@@ -149,7 +155,6 @@ const redirecionar = () =>{
   window.location.href = `./index.html`
 }
 
-
 elemento.forEach((button) => {
   button.addEventListener(
     "click",
@@ -157,19 +162,33 @@ elemento.forEach((button) => {
       console.log(contador);
       const letraSelecionada = this.getAttribute("caractere");
       console.log(letraSelecionada);
-
       if (palavraSelecionada.includes(letraSelecionada)) {
         // Atualiza parte da palavra na tela com a escolha correta da letra através do map
         const lugarDaPalavraSecreta =
           document.getElementById("palavra-secreta");
-        palavraParcial = palavraSelecionada
-          .split("")
-          .map((letra, index) =>
+        palavraParcial = palavraSelecionada.split("").map((letra, index) =>
             letra === letraSelecionada
               ? letraSelecionada
               : palavraParcial[index]
           );
         lugarDaPalavraSecreta.textContent = palavraParcial.join("");
+
+        const palavraAtual = document.getElementById("palavra-secreta").textContent;
+        const arrayFinal = palavraAtual.split("").filter((x) => x == "_")
+        if(arrayFinal.length == 0){
+          teclado.remove();
+          setTimeout(() => {
+            window.alert(
+              `Parabens, voce ganhou! A palavra certa era ${palavraSelecionada}.`
+            );
+          }, 500);
+
+          const reset = document.getElementById("botao-restart");
+          reset.insertAdjacentHTML(
+          "afterBegin",
+          `<button onclick="redirecionar()" id="butn" style="background-image: url('sprites/botao_restart.png');"></button>`
+        );
+        }
         return;
       }
 
@@ -209,6 +228,7 @@ elemento.forEach((button) => {
       );
       contador = contador - 1;
       atualizarInfoJogador(); // Atualize a informação do jogador da vez na tela
+      
     }
     //  Atualiza a imagem da forca
   );
@@ -229,5 +249,6 @@ mostrarNJogadores();
 definirTema();
 marcarJogador();
 mostrarPalavraNaTela(palavraSelecionada);
+
 
 

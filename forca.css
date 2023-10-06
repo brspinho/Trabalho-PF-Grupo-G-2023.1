@@ -170,6 +170,7 @@
         position: relative;   
     }
     #butn{
+        margin-left: 250px;
         width: 300px;
         height: 100px;
         background-color: transparent;

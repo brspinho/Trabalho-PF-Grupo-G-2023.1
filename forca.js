@@ -179,7 +179,7 @@ elemento.forEach((button) => {
           teclado.remove();
           setTimeout(() => {
             window.alert(
-              `Parabens, voce ganhou! A palavra certa era ${palavraSelecionada}.`
+              `Parabens, PLAYER ${vez} você ganhou! Para jogar novamente, clique no botão RESTART.`
             );
           }, 500);
 
@@ -211,7 +211,7 @@ elemento.forEach((button) => {
 
         setTimeout(() => {
           window.alert(
-            `Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}.`
+            `Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}. Para jogar novamente, clique no botão RESTART`
           );
         }, 500);
         return;

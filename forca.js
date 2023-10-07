@@ -75,7 +75,7 @@ const selecionarPalavraAleatoria = (tema = pegarTemaURL()) => {
 const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
   const [x, ...xs] = palavra;
   if (indef(x)) return "";
-  else if (x === " ") return ` ${traceja(xs)}`;
+  else if (x === " ") return `  ${traceja(xs)}`;
   else return `_ ${traceja(xs)}`;
 };
 //console.log(traceja(palavraSelecionada))

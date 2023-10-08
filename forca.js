@@ -119,11 +119,11 @@ function atualizarInfoJogador() {
 }
 
 atualizarInfoJogador();
-
+//Redireciona para a página inicial do jogo.
 const redirecionar = () =>{
   window.location.href = `./index.html`
 }
-
+//Pega os valores recebidos pelos botões do teclado que estão marcados com a classe 'letra', no momento do click
 elemento.forEach((button) => {
   button.addEventListener(
     "click",
@@ -205,15 +205,6 @@ elemento.forEach((button) => {
   );
 });
 
-/*function funcaoDoMap(x) {
-    if (x===letraSelecionada) {
-      return letraSelecionada
-    } else if(palavraParcial.includes(x)) {
-      
-    }else{
-
-    }
-  }*/
 
 //Chamada de funções
 mostrarNJogadores();

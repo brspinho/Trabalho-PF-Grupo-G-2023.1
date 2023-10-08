@@ -109,6 +109,8 @@ let contador = 5; //Quantidade de vidas
 const elemento = document.querySelectorAll(".letra");
 let vez = 1; // Jogador inicial
 let palavraParcial = Array.from(palavraSelecionada).map(() => "_ ");
+const letrasChutadasDiv = document.getElementById("letras-chutadas");
+const letrasChutadas = [];
 
 // Função pra mostrar na tela o jogador da vez
 function atualizarInfoJogador() {
@@ -195,6 +197,8 @@ elemento.forEach((button) => {
       );
       contador = contador - 1;
       atualizarInfoJogador(); // Atualize a informação do jogador da vez na tela
+      letrasChutadas.push(letraSelecionada); // Registra a letra chutada
+      letrasChutadasDiv.textContent = `Chutes errados: ${letrasChutadas.join(", ")}`;
       
     }
     //  Atualiza a imagem da forca

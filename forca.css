@@ -98,7 +98,7 @@
     
     header{
         position: relative;
-        background-color: blueviolet;
+        background-color: transparent;
         height: 40px;
         
     }
@@ -130,6 +130,15 @@
         font-size: 18px; 
         padding: 10px; 
         text-align: center; 
+      }
+
+      #letras-chutadas {
+        font-family: 'Minecraft', Times, serif;
+        background-color: transparent; 
+        color: red; 
+        font-size: 18px; 
+        padding: 10px; 
+        text-align: right; 
       }
 
 

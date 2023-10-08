@@ -1,231 +1,232 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    
-    }
-    /*========================== INÍCIO ==========================*/
-    @font-face {
-        font-family: 'Minecraft';
-        src: url('Minecraft.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-     #gamehtml{
-        width: 80% ;
-        height: 100%;
-        margin: 0px auto;
-        background-color: bisque;
-    }
-    #index{
-        
-        width: 80% ;
-        height: 100%;
-        margin: 0px auto;
-        background-color: #464646
-    }
-    
-    #Logo{
-        text-align: center;
-        padding-top: 170px;
-        margin-top: -64px;
-    }
-     
-    /*Textos*/
-    #texto_escolher_tema{
-        font-family: 'Minecraft', Times, serif;
-        /* bottom: 355px; 
+* {
+  padding: 0px;
+  margin: 0px;
+}
+/*========================== INÍCIO ==========================*/
+@font-face {
+  font-family: "Minecraft";
+  src: url("Minecraft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#gamehtml {
+  width: 80%;
+  height: 100%;
+  margin: 0px auto;
+  background-color: bisque;
+}
+#index {
+  width: 80%;
+  height: 100%;
+  margin: 0px auto;
+  background-color: #464646;
+}
+
+#Logo {
+  text-align: center;
+  padding-top: 170px;
+  margin-top: -64px;
+}
+
+/*Textos*/
+#texto_escolher_tema {
+  font-family: "Minecraft", Times, serif;
+  /* bottom: 355px; 
          position: absolute; */
-    }
-    #texto_numero_jogadores{
-        font-family: 'Minecraft', Times, serif;
-        /*padding-left: 598px; 
+}
+#texto_numero_jogadores {
+  font-family: "Minecraft", Times, serif;
+  /*padding-left: 598px; 
         bottom: 330px; 
         position: absolute; */
-    }
-    
-    
-    /*Botões Select*/
-    #temas{
-        font-family: 'Minecraft', Times, serif;
-        background-color: transparent;
-        border-color: transparent;
-        font-size: 20px;
-        width: 290px;
-        position: absolute;
-        /* bottom: 286px; */
-        padding-left: 12px;
-        margin-top: 14px;
-    }
-    #numero-jogadores{
-        font-family: 'Minecraft', Times, serif;
-        background-color: transparent;
-        border-color: transparent;
-        font-size: 20px;
-        width: 290px; 
-        position: absolute;
-        /* bottom: 286px; */
-        padding-left: 12px;
-        margin-top: 14px;
-    }
-    
-    /*Molduras*/
-    .container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around ;
-    }
-    .moldura{
-        background-image: url("sprites/Moldura_versao_4.png") ;
-        width : 300px ;
-        height: 50px;
-    }
-    
-    /*Botão Jogar*/
-    #botaoJogar{
-        text-align: center;
-        background-color: transparent;
-        border-color: transparent;
-    }
-    #posicao_botao{
-        display: flex;
-        justify-content: center;
-        padding-top: 70px;
-    }
-    
-    
-    /*========================== GAME ==========================*/
-    
-    header{
-        position: relative;
-        background-color: transparent;
-        height: 40px;
-        
-    }
-    ul{
-        list-style-type: none;
-        float: right;
-        position: absolute;
-        margin: 10px auto;
-        padding: 0px 12px;
-    }
-    
-    #palavra-secreta{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: 2em;
-        color:#121313;
-        margin-top: 20px;
-        white-space: pre;
-    
-    }
+}
 
+/*Botões Select*/
+#temas {
+  font-family: "Minecraft", Times, serif;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 20px;
+  width: 290px;
+  position: absolute;
+  /* bottom: 286px; */
+  padding-left: 12px;
+  margin-top: 14px;
+}
+#numero-jogadores {
+  font-family: "Minecraft", Times, serif;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 20px;
+  width: 290px;
+  position: absolute;
+  /* bottom: 286px; */
+  padding-left: 12px;
+  margin-top: 14px;
+}
 
-    #vez-jogador {
-        font-family: 'Minecraft', Times, serif;
-        background-color: transparent; 
-        color: black; 
-        font-size: 18px; 
-        padding: 10px; 
-        text-align: center; 
-      }
+/*Molduras*/
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.moldura {
+  background-image: url("sprites/Moldura_versao_4.png");
+  width: 300px;
+  height: 50px;
+}
 
-      #letras-chutadas {
-        font-family: 'Minecraft', Times, serif;
-        background-color: transparent; 
-        color: red; 
-        font-size: 18px; 
-        padding: 10px; 
-        text-align: right; 
-      }
+/*Botão Jogar*/
+#botaoJogar {
+  text-align: center;
+  background-color: transparent;
+  border-color: transparent;
+}
+#posicao_botao {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
 
+/*========================== GAME ==========================*/
 
-    ul li{
-      float:  left;
-      text-transform:uppercase;  
-      padding: 12px; 
-      font-size: 14px;
-      color:#ccffff; 
-      font: "Lucida Console", "arial", sans-serif;
-    }       
-    #interface{
-        width: 90% ;
-        height: 100%;
-        margin:  auto;
-        border: 1px solid blanchedalmond;
-    }
-    #tema{
-        /* background-color: aqua; */
-        padding: 25px;
-        text-align: center;
-        margin-top: 30px;
-    }
-    .linha{
-        width: 80%;
-        margin: 1.5% auto;
-        text-align: center;
-    }
-    #teclado button{
-        width: 50px;
-        height: 49px;
-        border-radius: 50%;
-    }
-    #forca-imagens{
-        border: 1px transparent;
-        text-align: center;
-        margin-top: -10px;
-        height: 90%; 
-        position: relative;   
-    }
-    #butn {
-        position: fixed;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 300px;
-        height: 100px;
-        background-color: transparent;
-        border-color: transparent;
-      }
-      
-    .img0{
-        position: absolute;
-        z-index: 7;
-    }
-    .img1{
-        position: absolute;
- 
-        z-index: 6;
-    }
-    .img2{
-    
-        z-index: 5;
-        position: absolute;
-  
-    }
-    .img3{
-        z-index: 4;      
-        position: absolute;
+header {
+  position: relative;
+  background-color: #113946;
+  height: 40px;
+}
+ul {
+  list-style-type: none;
+  float: right;
+  position: absolute;
+  margin: 10px auto;
+  padding: 0px 12px;
+}
 
-    }
-    .img4{
-        z-index: 3;       
-        position: absolute;
+#palavra-secreta {
+  font-family: "Minecraft", Times, serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #113946;
+  margin-top: 20px;
+  white-space: pre;
+}
 
-    }
-    .img5{
-        z-index: 2;       
-        position: absolute;
+#vez-jogador {
+  font-family: "Minecraft", Times, serif;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+}
 
-    }
-    .img6{
-       z-index: 1;        
-        position: absolute;
-        
-    }
+#letras-chutadas {
+  font-family: "Minecraft", Times, serif;
+  background-color: transparent;
+  color: red;
+  font-size: 18px;
+  padding: 10px;
+  text-align: right;
+}
 
+ul li {
+  float: left;
+  text-transform: uppercase;
+  padding: 12px;
+  font-size: 14px;
+  color: #ccffff;
+  font: "Lucida Console", "arial", sans-serif;
+}
+#interface {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  border: 1px solid blanchedalmond;
+}
+#tema {
+  /* background-color: aqua; */
+  font-family: "Minecraft", Times, serif;
+  padding: 25px;
+  text-align: center;
+  margin-top: 30px;
+  color: #113946;
+}
+.linha {
+  width: 80%;
+  margin: 1.5% auto;
+  text-align: center;
+}
+#teclado button {
+  width: 50px;
+  height: 49px;
+  border-radius: 50%;
+}
+#forca-imagens {
+  border: 1px transparent;
+  text-align: center;
+  margin-top: -10px;
+  height: 90%;
+  position: relative;
+}
+#butn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 100px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.img0 {
+  position: absolute;
+  z-index: 7;
+}
+.img1 {
+  position: absolute;
+
+  z-index: 6;
+}
+.img2 {
+  z-index: 5;
+  position: absolute;
+}
+.img3 {
+  z-index: 4;
+  position: absolute;
+}
+.img4 {
+  z-index: 3;
+  position: absolute;
+}
+.img5 {
+  z-index: 2;
+  position: absolute;
+}
+.img6 {
+  z-index: 1;
+  position: absolute;
+}
+
+.p1 {
+  font-family: "Minecraft", Times, serif;
+}
+.p2 {
+  font-family: "Minecraft", Times, serif;
+}
+.p3 {
+  font-family: "Minecraft", Times, serif;
+}
+.p4 {
+  font-family: "Minecraft", Times, serif;
+}
 
 
 

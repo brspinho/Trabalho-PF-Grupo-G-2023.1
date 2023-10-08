@@ -180,7 +180,7 @@ elemento.forEach((button) => {
 
         setTimeout(() => {
           window.alert(
-            `Perdeu, TROUXA. A palavra certa era ${palavraSelecionada}. Para jogar novamente, clique no botão RESTART`
+            `GAME OVER. A palavra certa era ${palavraSelecionada}. Para jogar novamente, clique no botão RESTART`
           );
         }, 500);
         return;

@@ -147,7 +147,6 @@ ul li {
   width: 90%;
   height: 100%;
   margin: auto;
-  border: 1px solid blanchedalmond;
 }
 #tema {
   /* background-color: aqua; */
@@ -217,15 +216,19 @@ ul li {
 
 .p1 {
   font-family: "Minecraft", Times, serif;
+  color: white;
 }
 .p2 {
   font-family: "Minecraft", Times, serif;
+  color: white;
 }
 .p3 {
   font-family: "Minecraft", Times, serif;
+  color: white;
 }
 .p4 {
   font-family: "Minecraft", Times, serif;
+  color: white;
 }
 
 

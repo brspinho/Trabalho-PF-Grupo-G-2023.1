@@ -145,6 +145,7 @@ elemento.forEach((button) => {
         const palavraAtual = document.getElementById("palavra-secreta").textContent;
         const arrayFinal = palavraAtual.split("").filter((x) => x == "_")
         if(arrayFinal.length == 0){
+          // Caso não tenha mais letras em branco na palavra secreta, o jogador ganha e o teclado é removido.
           teclado.remove();
           setTimeout(() => {
             window.alert(
@@ -161,7 +162,8 @@ elemento.forEach((button) => {
         return;
       }
 
-      if (contador == 0) {
+      if (contador == 0) { 
+        // Se o contador chegar a 0, a partida é perdida e o teclado é removido.
         const img = document.getElementById("forca-imagens");
 
         img.insertAdjacentHTML(
@@ -170,7 +172,7 @@ elemento.forEach((button) => {
         );
 
         teclado.remove();
-
+// Botão do restart para voltar para a página inicial.
         const reset = document.getElementById("botao-restart");
 
         reset.insertAdjacentHTML(

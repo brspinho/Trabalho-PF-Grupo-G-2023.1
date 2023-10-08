@@ -1,5 +1,3 @@
-const log = (str) => console.log(str);
-
 // Registro dos temas
 const temas = {
   animais: ['cachorro', 'gato', 'elefante', 'leao', 'peixe', 'tigre', 'girafa', 'macaco', 'cobra', 'abelha', 'aguia', 'arara', 'anta', 'boi', 'baleia', 'bode', 'borboleta', 'camelo', 'capivara', 'castor', 'foca', 'frango', 'gorila', 'guaxinim', 'hipopotamo', 'iguana', 'zebra', 'jacare', 'morcego', 'pato', 'ovelha', 'urso'],
@@ -15,38 +13,7 @@ const temas = {
   paises: ['Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
 };
 
-console.log(temas);
-
-//Função para procurar a  posição da letra na palavra
-/*Usa-se o split para dividir a string em uma lista e o reduce procura a letra escolhida, concatenando em uma lista o index da letra .*/
-/*
-const posicaoLetra = (palavra, letra) => {
-  return palavra.split("").reduce((acc, elemento, index) => {
-    if (elemento === letra) {
-      return acc.concat(index);
-    }
-
-    return acc;
-  }, []);
-};*/
-
-const indef = (x) => typeof x == "undefined";
-//Função para verificar se a palavra já foi completada, se retornar 'false' foi completada, se retornar 'true' ainda faltam letras para acertar
-/*const acertaTudo = (tracejada, e = "_") => {
-  const [x, ...xs] = tracejada;
-  if (indef(x)) {
-    return false;
-  } else if (x === " ") return acertaTudo(xs, e);
-  // Se x for um espaço em branco, continuar verificando as outras letras
-  else return e === x || acertaTudo(xs, e);
-};*/
-
-
-
-
-
-
-//Recupera o Tema e o jogador  do URL do site
+//Recupera o Tema e o número de jogadores inseridos anteriormente no URL do site.
 function pegarTemaURL() {
   const searchParams = new URLSearchParams(window.location.search);
   const tema = searchParams.get("tema");
@@ -64,7 +31,7 @@ const definirTema = () => {
   pegarDivTema.textContent = pegarTemaURL(); // Através do valor da função pegarTemaURL, utilizamos a propriedade 'innerHTML' para inserir este valor dentro do id 'tema'.
 };
 
-// Função para selecionar uma palavra aleatória de um tema diretamente do URL.
+// Função para selecionar uma palavra aleatória do tema escolhido diretamente do URL.
 const selecionarPalavraAleatoria = (tema = pegarTemaURL()) => {
   // Função em que o Math.random multiplicado pelo comprimento do tema escolhido, vai gerar um indíce aleatório.
   const palavraAleatoria = Math.floor(Math.random() * tema.length);
@@ -74,11 +41,10 @@ const selecionarPalavraAleatoria = (tema = pegarTemaURL()) => {
 // Função para substituir a palavra aleatória por tracejados, está programada agora para printar a palavra sem as vírgulas
 const traceja = (palavra = selecionarPalavraAleatoriaPorTema()) => {
   const [x, ...xs] = palavra;
-  if (indef(x)) return "";
+  if (typeof x == "undefined") return "";
   else if (x === " ") return `  ${traceja(xs)}`;
   else return `_ ${traceja(xs)}`;
 };
-//console.log(traceja(palavraSelecionada))
 
 // Função para mostrar os jogadores na tela
 function mostrarNJogadores() {
@@ -115,8 +81,9 @@ function mostrarNJogadores() {
 function marcarJogador() {
   const pegarP1 = document.querySelector(".p1");
   pegarP1.style.backgroundImage = 'url("") ';
-  pegarP1.style.color = "blue";
+  pegarP1.style.color = "white";
 }
+
 
 // Função que recebe uma palavra como argumento e a exibe na tela.
 const mostrarPalavraNaTela = (palavra) => {
@@ -249,6 +216,5 @@ mostrarNJogadores();
 definirTema();
 marcarJogador();
 mostrarPalavraNaTela(palavraSelecionada);
-
 
 

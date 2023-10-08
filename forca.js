@@ -2,17 +2,17 @@ const log = (str) => console.log(str);
 
 // Registro dos temas
 const temas = {
-  animais: ['cachorro', 'gato', 'elefante', 'leao', 'passaro', 'peixe', 'tigre', 'girafa', 'macaco', 'cobra'],
-  comidas: ['pizza', 'hamburguer', 'sushi', 'massa', 'salada', 'sopa', 'churrasco', 'taco', 'kebab', 'sorvete'],
-  capitaisbrasileiras: ['aracaju', 'salvador', 'rio branco', 'belem', 'belo horizonte', 'boa vista', 'brasilia', 'campo grande', 'cuiaba', 'curitiba', 'florianopolis', 'fortaleza', 'goiania', 'joao pessoa', 'macapa', 'maceio', 'manaus', 'natal', 'palmas', 'porto alegre', 'porto velho', 'recife', 'sao luis', 'teresina', 'vitoria'],
+  animais: ['cachorro', 'gato', 'elefante', 'leao', 'peixe', 'tigre', 'girafa', 'macaco', 'cobra', 'abelha', 'aguia', 'arara', 'anta', 'boi', 'baleia', 'bode', 'borboleta', 'camelo', 'capivara', 'castor', 'foca', 'frango', 'gorila', 'guaxinim', 'hipopotamo', 'iguana', 'zebra', 'jacare', 'morcego', 'pato', 'ovelha', 'urso'],
+  comidas: ['pizza', 'hamburguer', 'sushi', 'massa', 'salada', 'sopa', 'churrasco', 'taco', 'kebab', 'sorvete', 'lasanha', 'coxinha', 'tapioca', 'chocolate', 'pastel'],
+  capitaisbrasileiras: ['aracaju', 'salvador', 'belem', 'brasilia', 'cuiaba', 'curitiba', 'florianopolis', 'fortaleza', 'goiania', 'macapa', 'maceio', 'manaus', 'natal', 'palmas','recife', 'teresina', 'vitoria'],
   jsfuncional: ['currying','map','filter','reduce','imutabilidade','recursividade', 'pureza','arrow','listas'],
   linguagensprogramacao: ['python', 'javascript', 'java',  'ruby', 'php', 'swift', 'rust', 'typescript', 'kotlin', 'perl', 'haskell', 'cobol', 'prolog', 'sql', 'assembly'],
-  cores: ['vermelho', 'azul', 'amarelo', 'verde', 'laranja', 'roxo', 'rosa', 'marrom', 'preto', 'branco'],
-  esportes: ['futebol', 'basquete', 'tenis', 'natacao', 'volei', 'atletismo', 'golfe', 'rugby', 'tenis de mesa', 'ciclismo', 'badminton'],
-  profissoes: ['medico', 'engenheiro', 'professor', 'advogado', 'contador', 'enfermeiro', 'arquiteto', 'psicologo', 'programador', 'jornalista'],
-  instrumentosmusicais: ['violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'saxofone'],
+  cores: ['vermelho', 'azul', 'amarelo', 'verde', 'laranja', 'roxo', 'rosa', 'marrom', 'preto', 'branco', 'cinza', 'lilas', 'magenta', 'bege', 'bordo', 'violeta'],
+  esportes: ['futebol', 'basquete', 'tenis', 'natacao', 'volei', 'atletismo', 'golfe', 'rugby', 'ciclismo', 'badminton', 'lol', 'automobilismo', 'futsal', 'ginastica', 'handebol', 'esgrima', 'boxe', 'karate', 'surfe', 'xadrez'],
+  profissoes: ['medico', 'engenheiro', 'professor', 'advogado', 'contador', 'enfermeiro', 'arquiteto', 'psicologo', 'programador', 'jornalista', 'veterinario', 'motorista', 'pintor', 'quimico', 'policial'],
+  instrumentosmusicais: ['violino', 'guitarra', 'piano', 'flauta', 'bateria', 'trompete', 'violoncelo', 'saxofone', 'harpa', 'gaita', 'teclado', 'baixo', 'chocalho', 'pandeiro', 'sino', 'sanfona'],
   frutas: ['Banana', 'Pera', 'Uva', 'Tangerina', 'Tamarindo', 'Siriguela', 'Pitanga', 'Pessego', 'Morango', 'Melao', 'Melancia', 'Maracuja', 'Mangaba', 'Manga', 'Mamao', 'Maca', 'Limao', 'Laranja', 'Kiwi', 'Jambo', 'Jenipapo', 'Jaca', 'Jabuticaba', 'Groselha', 'Goiaba', 'Framboesa', 'Figo', 'Coco', 'Cereja', 'Carambola', 'Caja', 'Cacau', 'Amora', 'Acerola', 'Acai', 'Abacaxi', 'Abacate', 'Caju'],
-  paises: ['Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Estados Unidos', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
+  paises: ['Brasil', 'Argentina', 'China', 'Uruguai', 'Equador', 'Chile', 'Russia', 'Australia', 'Japao', 'India', 'Canada', 'Mexico', 'Alemanha', 'Franca', 'Italia', 'Mongolia', 'Suica', 'Paraguai', 'Nigeria', 'Argelia', 'Dinamarca', 'Finlandia', 'Cazaquistao', 'Indonesia', 'Sudao', 'Libia', 'Peru', 'Mali', 'Colombia', 'Etiopia', 'Bolivia', 'Egito', 'Venezuela', 'Iraque', 'Siria', 'Paquistao', 'Afeganistao', 'Somalia', 'Espanha', 'Suecia', 'Tailandia', 'Camaroes', 'Portugal', 'Inglaterra', 'Filipinas', 'Romenia', 'Nepal', 'Grecia', 'Cuba', 'Austria', 'Croacia']
 };
 
 console.log(temas);

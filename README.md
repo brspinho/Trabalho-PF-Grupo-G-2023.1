@@ -32,4 +32,6 @@ Participantes: DERICK TELES CHAGAS (T02), GUILHERME OLIVEIRA FONSECA (T02), MIGU
 https://www.youtube.com/watch?v=sW-iTalqtdU
 
 ## link do jogo no netlify: 
+https://trabalho-jogo-da-forca.netlify.app
+
 
